@@ -1,0 +1,28 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="mushroomsContainer">
+  <div>
+    <h2>Grzyby, na które możesz natrafić</h2>
+    <div id="list_searchbar_holder">
+      <form method="GET" action="{% url 'mushrooms' %}">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search for your favourite mushrooms"
+        />
+      </form>
+      <div>
+        {% for mushroom in mushrooms %}
+        <div id="mushroom_list_holder">
+          <div class="mushroom_name"><span>{{mushroom.name}}</span></div>
+          <div><span>{{mushroom.specname}}</span></div>
+          <div><p>{{mushroom.description}}</p></div>
+          <img class="mushroom_photo" src="{{ mushroom.img1.url }}" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<div id="navbarContainer">
+  <div id="navbarLeftContainer">
+    <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
+    <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
+    <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
+    <a class="navbarTextContainer">Kursy</a>
+  </div>
+  <div id="navbarRightContainer">
+    <a class="navbarTextContainer">Przepisy</a>
+
+    {% if user.is_authenticated %}
+    <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
+    <p>Witaj, {{ user.username }}!</p>
+    <a href="{% url 'profile' %}" class="navbarTextContainer">Profile</a>
+    <a href="{% url 'logout' %}" class="navbarTextContainer">wyloguj</a>
+    {% else %}
+    <!-- Treść dostępna tylko dla niezalogowanych użytkowników -->
+    <a href="{% url 'login' %}" class="navbarTextContainer">zaloguj</a>
+    <a href="{% url 'register' %}" class="navbarTextContainer">zarejestruj</a>
+    {% endif %}
+  </div>
+</div>

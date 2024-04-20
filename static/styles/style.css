@@ -1,0 +1,137 @@
+/* login and register form */
+.form-container {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Styl dla etykiet */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Styl dla pól wejściowych */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+  width: calc(100% - 22px); /* 22px to suma paddingu i bordera */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styl dla przycisków */
+.form-container button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styl dla przycisków po najechaniu myszą */
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+/* NAVBAR */
+
+#navbarContainer {
+  background-color: rgb(200, 224, 246);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  border-radius: 10px;
+}
+
+#navbarLeftContainer {
+  display: flex;
+  justify-content: left;
+}
+
+#navbarRightContainer {
+  display: flex;
+  justify-content: right;
+}
+
+.navbarTextContainer {
+  margin: 10px;
+}
+
+/* HOME */
+#homeContainer {
+  height: 80vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 1fr 1fr;
+}
+
+.upload-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.upload-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-form input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.upload-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4f83f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-form button[type="submit"]:hover {
+  background-color: #2d5fe7;
+}
+
+.mushroom_photo {
+  width: 30%;
+  max-width: 100%;
+  height: auto;
+  /* width: 10px; */
+}
+/*
+#mushroom_list_holder {
+  width: 50%;
+} */
+
+#list_searchbar_holder {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
