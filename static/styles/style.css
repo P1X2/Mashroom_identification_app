@@ -1,7 +1,28 @@
+:root {
+  --primary-color: #f7b845; 
+  --secondary-color: #f3aa22;
+  --background-color: #f8f9fa;
+}
+
+#mainBody {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* width: 200vh; */
+  /* grid-area: 100vh; */
+}
+
 /* login and register form */
 .form-container {
   width: 300px;
-  margin: 0 auto;
+  /* margin: 10%; */
+  margin: auto;
+  margin-top: 5%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -41,23 +62,44 @@
 }
 
 /* NAVBAR */
-
 #navbarContainer {
-  background-color: rgb(200, 224, 246);
-  display: grid;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  /* display: grid; */
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  border-radius: 10px;
+  grid-gap: 50%;
+  /* display: flex; */
+  flex-wrap: wrap;
+  /* border-radius: 10px; */
+  /* margin-top: -8px; */
+  /* margin-left: -10px; */
+  
+  place-items: center; 
+  width: 100%;
+  justify-items: center;
+}
+
+#navbarContainer a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#navbarContainer a:hover {
+  text-decoration: underline;
 }
 
 #navbarLeftContainer {
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 #navbarRightContainer {
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  justify-items: center;
+  /* background-color: #45a049; */
 }
 
 .navbarTextContainer {
@@ -66,19 +108,32 @@
 
 /* HOME */
 #homeContainer {
-  height: 80vh;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-rows: 1fr 1fr;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  /* grid-gap: 10px; */
+  /* grid-template-rows: 1fr 1fr; */
+    margin-top: 5%;
 }
 
-.upload-form {
+/* .upload-form {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
+} */
+
+.upload-form {
+  width: 380px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
 }
 
 .upload-form h2 {
@@ -106,7 +161,7 @@
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #4f83f3;
+  background-color:var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -114,7 +169,7 @@
 }
 
 .upload-form button[type="submit"]:hover {
-  background-color: #2d5fe7;
+  background-color: var(--secondary-color #6c757d);
 }
 
 .mushroom_photo {
@@ -135,3 +190,4 @@
   height: 100vh;
   flex-direction: column;
 }
+
