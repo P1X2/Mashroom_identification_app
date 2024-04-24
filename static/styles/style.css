@@ -177,7 +177,7 @@
 }
 
 .upload-form button[type="submit"]:hover {
-  background-color: var(--secondary-color #6c757d);
+  background-color: var(--secondary-color);
 }
 
 .mushroom_photo {
