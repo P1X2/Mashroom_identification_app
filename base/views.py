@@ -3,7 +3,7 @@ from .forms import ImageUploadForm
 from PIL import Image
 from .utils import *
 from django.db.models import Q
-from .models import Mushroom
+from .models import Mushroom, Recipe
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -89,3 +89,20 @@ def abc(request):
 def  profile(request):
     context = {}
     return render(request, 'base/profile.html', context)
+
+
+def recipes_categories(request):
+    context = {}
+    return render(request, 'base/recipes_categories.html', context)
+
+def recipes(request):
+    category = request.GET.get('text')
+    recipes = Recipe.objects.filter(category=category)
+    context = {"recipes": recipes}
+    return render(request, 'base/recipes.html', context)
+
+
+def recipe(request, pk):
+    recipe = Recipe.objects.get(id=pk)
+    context = {"recipe": recipe}
+    return render(request, 'base/recipe.html', context)

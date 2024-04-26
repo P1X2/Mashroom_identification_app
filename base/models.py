@@ -10,3 +10,13 @@ class Mushroom(models.Model):
     img1 = models.ImageField(null=True, default="grzybki.jpeg")
     img2 = models.ImageField(null=True, default="grzybki.jpeg")
     img3 = models.ImageField(null=True, default="grzybki.jpeg")
+
+
+class Recipe(models.Model):
+    name = models.CharField(max_length=200)
+    img1 = models.ImageField(null=True, default="przepis.jpg")
+    img2 = models.ImageField(null=True, default="przepis.jpg")
+    category = models.TextField(null=True, blank=False)
+    preptime = models.TextField(null=True, blank=False)
+    ingredients = models.JSONField()
+    instructions = models.JSONField()

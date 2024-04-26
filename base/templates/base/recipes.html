@@ -1,0 +1,12 @@
+{% extends 'main.html' %} {% block content %}
+
+<div>
+  {% for recipe in recipes %}
+  <div>
+    <a href="{% url 'recipe' recipe.id %}">{{ recipe.name }}</a
+    ><span>{{ recipe.preptime }}min</span>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
