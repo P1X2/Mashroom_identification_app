@@ -14,10 +14,12 @@
       <div>
         {% for mushroom in mushrooms %}
         <div id="mushroom_list_holder">
-          <div class="mushroom_name"><span>{{mushroom.name}}</span></div>
-          <div><span>{{mushroom.specname}}</span></div>
-          <div><p>{{mushroom.description}}</p></div>
-          <img class="mushroom_photo" src="{{ mushroom.img1.url }}" />
+          <a href="{% url 'mushroom' mushroom.id %}">
+            <div class="mushroom_name"><span>{{mushroom.name}}</span></div>
+            <div><span>{{mushroom.specname}}</span></div>
+            <div><p>{{mushroom.description}}</p></div>
+            <img class="mushroom_photo" src="{{ mushroom.img1.url }}" />
+          </a>
         </div>
         {% endfor %}
       </div>

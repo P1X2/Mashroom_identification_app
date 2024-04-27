@@ -1,9 +1,9 @@
 {% extends 'main.html' %} {% block content %}
 
 <div id="abcContainer">
-  <div><a>Pierwsze grzybobranie</a></div>
-  <div><a>Gdzie szukać grzybów</a></div>
-  <div><a>Kiedy wychodzić na grzyby</a></div>
+  <div><a href="{% url 'abc1' %}">Pierwsze grzybobranie</a></div>
+  <div><a href="{% url 'abc2' %}">Gdzie szukać grzybów</a></div>
+  <div><a href="{% url 'abc3' %}">Kiedy wychodzić na grzyby</a></div>
   <div><a>Jak rozróżnić jadalne od trujących</a></div>
   <div><a>Grzyby, które łatwo pomylić</a></div>
 </div>

@@ -1,0 +1,29 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<h1>Nie znaleziono grzyba</h1>
+<img src="{% static 'images/smutny.jpg' %}" alt="no mushroom" />
+<p>
+  Dobra jakość obrazu: Upewnij się, że zdjęcie jest wyraźne i ma odpowiednią
+  jakość. Unikaj rozmytych, zniekształconych lub prześwietlonych zdjęć.
+</p>
+<p>
+  Dobry oświetlenie: Ustaw odpowiednie oświetlenie, aby obiekt na zdjęciu był
+  dobrze widoczny. Unikaj zbyt jasnego lub zbyt ciemnego oświetlenia, które może
+  utrudnić rozpoznanie obiektu.
+</p>
+<p>
+  Brak zakłóceń: Upewnij się, że na zdjęciu nie ma zbędnych elementów lub
+  zakłóceń, które mogą być mylące dla sieci neuronowej.
+</p>
+<p>
+  Kontrastowy tło: Jeśli to możliwe, użyj kontrastowego tła, które wyróżni
+  obiekt na zdjęciu. Unikaj tła, które jest zbyt podobne do obiektu, co może
+  utrudnić jego rozpoznanie.
+</p>
+<span
+  >Pamiętaj, że jakość i charakterystyka zdjęcia mogą mieć istotny wpływ na
+  skuteczność klasyfikacji przez sieć neuronową. Dlatego ważne jest, aby zadbać
+  o odpowiednie przygotowanie i wykonanie zdjęcia, aby ułatwić poprawne
+  rozpoznanie obiektu.</span
+>
+{% endblock %}

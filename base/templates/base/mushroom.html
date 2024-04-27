@@ -1,0 +1,28 @@
+{% extends 'main.html' %} {% block content %}
+<div class="container">
+  <h1 class="mushroom-name">{{ mushroom.name }}</h1>
+  <h2 class="scientific-name">{{ mushroom.specname }}</h2>
+  {% if mushroom.edible %}
+  <p class="edible">GRZYB JADALNY</p>
+  {% else %}
+  <p class="inedible">GRZYB NIEJADALNY</p>
+  {% endif %}
+  <div class="images-container">
+    <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
+    <img class="db_mushroom_photo" src="{{ mushroom.img2.url }}" />
+    <img class="db_mushroom_photo" src="{{ mushroom.img3.url }}" />
+  </div>
+  <div class="characteristics">
+    <h3>Charakterystyczne cechy:</h3>
+    <ul>
+      {% for a, z in mushroom.characteristics.items %}
+      <li>{{ a }} - {{ z }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="description">
+    <h3>Dokładniejszy opis grzyba:</h3>
+    <p>{{mushroom.description}}</p>
+  </div>
+</div>
+{% endblock %}

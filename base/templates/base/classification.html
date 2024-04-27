@@ -1,6 +1,28 @@
 {% extends 'main.html' %} {% block content %}
 
-<img src="{{ image }}" alt="Uploaded Image" />
-<p>{{ prediction }}</p>
+<div class="container">
+  <div class="uploaded-image">
+    <img src="{{ image }}" alt="Uploaded Image" />
+  </div>
+  <div class="result">
+    <h2>Wynik identyfikacji:</h2>
+    <p class="percentage">{{ probability }}%</p>
+    <div>
+      <a href="{% url 'mushroom' mushroom.id %}" class="mushroom-name"
+        >{{ mushroom.name }}</a
+      >
+    </div>
+    {% if mushroom.edible %}
+    <p class="edible">GRZYB JADALNY</p>
+    {% else %}
+    <p class="inedible">GRZYB NIEJADALNY</p>
+    {% endif %}
+  </div>
+  <div class="additional-images">
+    <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
+    <img class="db_mushroom_photo" src="{{ mushroom.img2.url }}" />
+    <img class="db_mushroom_photo" src="{{ mushroom.img3.url }}" />
+  </div>
+</div>
 
 {% endblock %}

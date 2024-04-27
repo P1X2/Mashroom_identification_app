@@ -15,7 +15,7 @@ def pil_to_data_uri(image):
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return f"data:image/jpeg;base64,{img_str}"
 
-def classify_img(image):
+def is_mushroom_classify_img(image):
     model_is_mushroom = isMushroomClassificationModel(3, 20, 2)
     model_is_mushroom.load_state_dict(torch.load("C:/Users/wrons/Desktop/CodePython/djangoMushrooms/mushroom_project/base/ai_models/isMushroomModel.pth"))
     classes = ["grzyb", 'NIE grzyb']
@@ -35,6 +35,6 @@ def classify_img(image):
     result = classes[y_pred_label_2]
 
     if result == "grzyb":
-        return "To jest grzyb"
+        return True
     else:
-        return "To NIE jest grzyb"
+        return False

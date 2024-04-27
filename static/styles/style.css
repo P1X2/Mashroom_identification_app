@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #f7b845; 
+  --primary-color: #f7b845;
   --secondary-color: #f3aa22;
   --background-color: #f8f9fa;
 }
@@ -7,7 +7,7 @@
 #mainBody {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   /* display: flex; */
   justify-content: center;
@@ -33,7 +33,6 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   align-items: center;
-
 }
 
 /* Styl dla etykiet */
@@ -82,8 +81,8 @@
   /* border-radius: 10px; */
   /* margin-top: -8px; */
   /* margin-left: -10px; */
-  
-  place-items: center; 
+
+  place-items: center;
   width: 100%;
   justify-items: center;
 }
@@ -116,13 +115,13 @@
 
 /* HOME */
 #homeContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* grid-gap: 10px; */
   /* grid-template-rows: 1fr 1fr; */
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 /* .upload-form {
@@ -169,7 +168,7 @@
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color:var(--primary-color);
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -186,10 +185,10 @@
   height: auto;
   /* width: 10px; */
 }
-/*
-#mushroom_list_holder {
-  width: 50%;
-} */
+
+#mushroom_list_holder:hover {
+  background-color: #30f274;
+}
 
 #list_searchbar_holder {
   display: flex;
@@ -199,3 +198,56 @@
   flex-direction: column;
 }
 
+/* CLASSIFICATION PAGE */
+.container {
+  flex: 1;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.uploaded-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.result {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.percentage {
+  font-size: 38px;
+  color: #5cb85c;
+}
+
+.edible {
+  font-size: 20px;
+  color: #5cb85c;
+}
+
+.inedible {
+  font-size: 20px;
+  color: #f10606;
+}
+
+.mushroom-name {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.additional-images {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.additional-images img {
+  max-width: 200px;
+  height: auto;
+  margin-right: 10px;
+}

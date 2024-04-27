@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Mushroom(models.Model):
     name = models.CharField(max_length=200)
     specname = models.CharField(max_length=200)
+    characteristics = models.JSONField(null=True)
     description = models.TextField(null=True, blank=True)
     edible = models.BooleanField(default=False)
     img1 = models.ImageField(null=True, default="grzybki.jpeg")
