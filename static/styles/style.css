@@ -87,7 +87,7 @@
 #navbarContainer a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #navbarContainer a:hover {
@@ -103,6 +103,7 @@
   display: flex;
   justify-content: center;
   justify-items: center;
+  /* padding: ; */
   /* background-color: #45a049; */
 }
 
@@ -121,13 +122,19 @@
 }
 
 /* Styl dla kontenera menu rozwijanego */
-.dropdown {
-  position: relative;
+.dropdown-left {
+  position: static;
+  display: inline-block;
+}
+
+.dropdown-right {
+  position: static;
   display: inline-block;
 }
 
 /* Styl dla elementów rozwijanego menu */
 .dropdown-content {
+  padding: 5px;
   display: none;
   position: absolute;
   background-color: #ffffff;
@@ -147,8 +154,14 @@
 }
 
 /* Pokazanie rozwijanego menu po najechaniu myszą */
-.dropdown:hover .dropdown-content {
+.dropdown-left:hover .dropdown-content {
   display: block;
+  left: 0%;
+}
+
+.dropdown-right:hover .dropdown-content {
+  display: block;
+  right: 0%;
 }
 
 /* HOME */
