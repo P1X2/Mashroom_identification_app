@@ -1,0 +1,13 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+
+<div class="uploaded-image">
+  <img src="{{ user_image }}" alt="Uploaded Image" />
+</div>
+
+<div class="additional-images">
+  <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
+  <img class="db_mushroom_photo" src="{{ mushroom.img2.url }}" />
+  <img class="db_mushroom_photo" src="{{ mushroom.img3.url }}" />
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'main.html' %} {% block content %}
+
+<div id="coursesContainer">
+  {% for course in courses %}
+  <div>
+    <a href="{% url 'course_theory' course.id %}">{{ course.name }}</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

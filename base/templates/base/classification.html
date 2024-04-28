@@ -17,6 +17,7 @@
     {% else %}
     <p class="inedible">GRZYB NIEJADALNY</p>
     {% endif %}
+    <div><a href="{% url 'compare' mushroom.id %}">Porównaj</a></div>
   </div>
   <div class="additional-images">
     <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />

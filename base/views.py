@@ -3,11 +3,12 @@ from .forms import ImageUploadForm
 from PIL import Image
 from .utils import *
 from django.db.models import Q
-from .models import Mushroom, Recipe
+from .models import *
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout
+import json
 
 def user_login(request):
     if request.method == 'POST':
@@ -51,13 +52,14 @@ def home(request):
             # Open the uploaded image with PIL
             img = Image.open(uploaded_image)
             is_mushrooom = is_mushroom_classify_img(img)
-            img = img.resize((100, 100))
+            # img = img.resize((100, 100))
             # processed_image = process_image(img)
             data_uri = pil_to_data_uri(img)
             # processed_image = process_image(img)
             # Now you can use processed_image in your neural network
             # Example: neural_network.predict(processed_image)
             if is_mushrooom:
+                request.session['uploaded_image'] = data_uri
                 # classification with NN here
                 result_name, pred_prob = "muchomor", 88
                 mushroom = Mushroom.objects.get(name=result_name)
@@ -92,7 +94,7 @@ def abc(request):
     context = {}
     return render(request, 'base/abc.html', context)
 
-def  profile(request):
+def profile(request):
     context = {}
     return render(request, 'base/profile.html', context)
 
@@ -129,3 +131,26 @@ def mushroom(request, pk):
     mushroom = Mushroom.objects.get(id=pk)
     context = {"mushroom": mushroom}
     return render(request, 'base/mushroom.html', context)
+
+
+def compare(request, pk):
+    mushroom = Mushroom.objects.get(id=pk)
+    data_uri = request.session.get('uploaded_image')
+    return render(request, 'base/compare.html', {'user_image': data_uri, "mushroom": mushroom})
+
+def courses(request):
+    courses = Course.objects.all()
+    return render(request, 'base/courses.html', {'courses': courses})
+
+
+def course_theory(request, pk):
+    course = Course.objects.get(id=pk)
+    theory = Theory.objects.get(course=course)
+    theory_items = TheoryItem.objects.filter(theory=theory)
+    return render(request, 'base/course_theory.html', {'theory_items': theory_items, 'course': course})
+
+def course_test(request, pk):
+    course = Course.objects.get(id=pk)
+    test = Test.objects.get(course=course)
+    questions = Question.objects.filter(test=test)
+    return render(request, 'base/course_test.html', {'questions': questions})

@@ -16,6 +16,10 @@ urlpatterns = [
     path('abc2', views.abc2, name='abc2'),
     path('abc3', views.abc3, name='abc3'),
     path('mushroom/<str:pk>/', views.mushroom, name='mushroom'),
+    path('compare/<str:pk>/', views.compare, name='compare'),
+    path('courses/', views.courses, name='courses'),
+    path('course_theory/<str:pk>/', views.course_theory, name='course_theory'),
+    path('course_test/<str:pk>/', views.course_test, name='course_test'),
     # path('classification/', views.classify, name="classification")
     # path('mySets/', views.mySets, name="mySets"),room/<str:pk>/
 ]
