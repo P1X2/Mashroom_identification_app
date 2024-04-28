@@ -1,16 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <div id="navbarContainer">
+
   <div id="navbarLeftContainer">
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-bars white"></i></button>      
+      <div class="dropdown-content">
+        <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
+        <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
+        <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
+        <a href="{% url 'courses' %}" class="navbarTextContainer">Kursy</a>
+        <a href="{% url 'recipes_categories' %}" class="navbarTextContainer">Przepisy</a>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- <div id="navbarLeftContainer">
     <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
     <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
     <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
     <a href="{% url 'courses' %}" class="navbarTextContainer">Kursy</a>
-  </div>
+  </div> -->
 
+  
   <div id="navbarRightContainer">
-    <a href="{% url 'recipes_categories' %}" class="navbarTextContainer"
-      >Przepisy</a
-    >
-
     {% if user.is_authenticated %}
     <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
     <p>Witaj, {{ user.username }}!</p>

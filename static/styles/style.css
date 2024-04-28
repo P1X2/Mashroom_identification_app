@@ -1,7 +1,11 @@
 :root {
-  --primary-color: #f7b845;
-  --secondary-color: #f3aa22;
+  --primary-color: #87b182;
+  --secondary-color: #62835e;
   --background-color: #f8f9fa;
+}
+
+.white {
+  color: white;
 }
 
 #mainBody {
@@ -9,25 +13,18 @@
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
-  /* display: flex; */
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
-  /* width: 200vh; */
-  /* grid-area: 100vh; */
 }
 
 /* login and register form */
 .form-container {
   width: 300px;
-  /* margin: 10%; */
   margin: auto;
   margin-top: 5%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  /* width: 380px;
-  padding: 30px; */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -113,6 +110,47 @@
   margin: 10px;
 }
 
+/* Style dla przycisku rozwijającego menu */
+.dropbtn {
+  background-color: var(--primary-color);
+  color: rgb(3, 3, 3);
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styl dla kontenera menu rozwijanego */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styl dla elementów rozwijanego menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Styl dla linków w rozwijanym menu */
+.dropdown-content a {
+  background-color: var(--primary-color);
+  /* color: black; */
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Pokazanie rozwijanego menu po najechaniu myszą */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* HOME */
 #homeContainer {
   width: 100%;
@@ -134,6 +172,7 @@
 } */
 
 .upload-form {
+  display: block;
   width: 380px;
   padding: 30px;
   background-color: #fff;
@@ -141,8 +180,15 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
-
+@media screen and (max-width: 480px) {
+  .upload-form {
+    width: 300px;
+  }
+  
+}
 .upload-form h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -155,8 +201,11 @@
 
 .upload-form input[type="file"] {
   display: block;
-  width: 100%;
   padding: 10px;
+  width: calc(100% - 20px);
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  /* padding-left: 10px; */
   margin-top: 5px;
   font-size: 16px;
   border: 1px solid #ddd;
