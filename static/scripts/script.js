@@ -23,3 +23,19 @@ function previousImage() {
   }
   imageElement.src = images[currentImageIndex];
 }
+
+function changeTab(selector_side) {
+  const selector = "." + selector_side + " .dropdown-content";
+  var tab = document.querySelector(selector);
+
+  // var rootStyles = window.getComputedStyle(document.documentElement);
+  // var secondaryColor = rootStyles.getPropertyValue("--secondary-color");
+  // var primaryColor = rootStyles.getPropertyValue("--primary-color");
+
+    if (tab.style.display === "none") {
+      tab.style.display = "block";
+    }
+    else {
+      tab.style.display = "none";
+    }
+  }

@@ -3,8 +3,8 @@
 <div id="navbarContainer">
   <div id="navbarLeftContainer">
     <div class="dropdown-left">
-      <button class="dropbtn"><i class="fas fa-bars white"></i></button>      
-      <div class="dropdown-content">
+      <button class="dropbtn" onclick="changeTab('dropdown-left')"><i class="fas fa-bars white"></i></button>      
+      <div class="dropdown-content dropdown-left">
         <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
         <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
         <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
@@ -16,8 +16,8 @@
   
   <div id="navbarRightContainer">
     <div class="dropdown-right">
-      <button class="dropbtn"><i class="fas fa-user white"></i></button>      
-      <div class="dropdown-content">
+      <button class="dropbtn" onclick="changeTab('dropdown-right')"><i class="fas fa-user white"></i></button>      
+      <div class="dropdown-content dropdown-right">
 
         {% if user.is_authenticated %}
         <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
