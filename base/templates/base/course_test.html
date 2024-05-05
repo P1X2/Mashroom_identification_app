@@ -10,7 +10,7 @@
   <ul>
     {% for answer in question.answer_set.all %}
     <li>
-      <input type="checkbox" name="user_answers" value="{{ answer.id }}" />
+      <input type="radio" name="user_answers" value="{{ answer.id }}" />
       {{ answer.text }}
     </li>
     {% endfor %}

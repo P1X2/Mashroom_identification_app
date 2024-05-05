@@ -8,6 +8,6 @@
   {% endif %} {% endfor %}
 </div>
 
+{% if user.is_authenticated %}
 <div><a href="{% url 'course_test' course.id %}">Sprawdź się</a></div>
-
-{% endblock %}
+{% endif %} {% endblock %}

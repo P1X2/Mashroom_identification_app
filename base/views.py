@@ -140,7 +140,12 @@ def compare(request, pk):
 
 def courses(request):
     courses = Course.objects.all()
-    return render(request, 'base/courses.html', {'courses': courses})
+
+    if request.user.is_authenticated:
+        scores = CourseScore.objects.filter(user=request.user)
+        return render(request, 'base/courses.html', {'courses': courses, 'scores': scores})
+    else:
+        return render(request, 'base/courses.html', {'courses': courses})
 
 
 def course_theory(request, pk):
@@ -153,4 +158,34 @@ def course_test(request, pk):
     course = Course.objects.get(id=pk)
     test = Test.objects.get(course=course)
     questions = Question.objects.filter(test=test)
+
+    if request.method == 'POST':
+        selected_answers = request.POST.getlist('user_answers')
+
+        questions = Question.objects.filter(test=test)
+        correct_answers = []
+        user_score = 0
+
+        for question in questions:
+            correct_answer = Answer.objects.get(question=question, correct=True)
+            correct_answers.append(str(correct_answer.id))
+
+        for selected_answer in selected_answers:
+            if selected_answer in correct_answers:
+                user_score += 1
+
+
+        total_questions = len(questions)
+        percentage_score = (user_score / total_questions) * 100
+
+        try:
+            course_score = CourseScore.objects.get(user=request.user, course=course)
+            course_score.score = percentage_score
+            course_score.save()
+            return redirect('courses')
+
+        except CourseScore.DoesNotExist:
+            CourseScore.objects.create(user=request.user, course=course, score=percentage_score)
+            return redirect('courses')
+
     return render(request, 'base/course_test.html', {'questions': questions})

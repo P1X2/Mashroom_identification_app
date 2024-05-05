@@ -32,10 +32,9 @@ function changeTab(selector_side) {
   // var secondaryColor = rootStyles.getPropertyValue("--secondary-color");
   // var primaryColor = rootStyles.getPropertyValue("--primary-color");
 
-    if (tab.style.display === "none") {
-      tab.style.display = "block";
-    }
-    else {
-      tab.style.display = "none";
-    }
+  if (tab.style.display === "none") {
+    tab.style.display = "block";
+  } else {
+    tab.style.display = "none";
   }
+}

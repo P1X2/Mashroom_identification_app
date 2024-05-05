@@ -4,10 +4,15 @@
   <img src="{{ user_image }}" alt="Uploaded Image" />
 </div>
 
-<div class="additional-images">
-  <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
-  <img class="db_mushroom_photo" src="{{ mushroom.img2.url }}" />
-  <img class="db_mushroom_photo" src="{{ mushroom.img3.url }}" />
+<div class="slider">
+  <div class="slides">
+    <img src="{{ mushroom.img1.url }}" />
+    <img src="{{ mushroom.img2.url }}" />
+    <img src="{{ mushroom.img3.url }}" />
+  </div>
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+  <button class="next" onclick="nextSlide()">&#10095;</button>
 </div>
+<script src="{% static 'scripts/slider.js' %}"></script>
 
 {% endblock %}
