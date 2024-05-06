@@ -1,6 +1,7 @@
 {% extends 'main.html' %} {% block content %}
 <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
-<head>
-  @{{ user.username }}
-</head>
+<h2>@{{ user.username }}</h2>
+<p>Poziom: {{ profile.level }}</p>
+<progress value="{{ profile.points }}" max="100"></progress>
+<p>{{ profile.points }}/100</p>
 {% endblock %}

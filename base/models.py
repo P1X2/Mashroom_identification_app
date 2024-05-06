@@ -1,5 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    level = models.IntegerField(default=1)
+    points = models.IntegerField(default=0)
+
 
 # Create your models here.
 class Mushroom(models.Model):
@@ -26,11 +35,14 @@ class Recipe(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    points = models.IntegerField(default=20)
+    threshold = models.IntegerField(default=80)
 
 class CourseScore(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     score = models.FloatField(default=0)
+    passed = models.BooleanField(default=False)
 
 class Theory(models.Model):
     course = models.OneToOneField(Course, on_delete=models.CASCADE)

@@ -4,27 +4,29 @@
   <div class="login-content">
     <div class="welcome-text">
       <h2>Welcome back,</h2>
-      <a>We're happy to see you here again. Enter your username and password.</a>
+      <a
+        >We're happy to see you here again. Enter your username and password.</a
+      >
     </div>
 
-    <hr class="separator-vertical"> <!-- Dodanie linii oddzielającej -->
+    <hr class="separator-vertical" />
+    <!-- Dodanie linii oddzielającej -->
 
     <div class="login-form">
       <div class="form-container">
         <!-- <h2>Log In</h2> -->
         <form method="post">
-          {% csrf_token %} 
-          {{ form.as_p }}
+          {% csrf_token %} {{ form.as_p }}
           <button type="submit">Log In</button>
         </form>
       </div>
-      <hr class="separator-horizontal"> <!-- Dodanie linii oddzielającej -->
+      <hr class="separator-horizontal" />
+      <!-- Dodanie linii oddzielającej -->
 
       <div class="register-text">
         Don't have an account?
         <a href="{% url 'register' %}" class="navbarTextContainer">Sign Up</a>
       </div>
-    
     </div>
   </div>
 </div>

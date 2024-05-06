@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout
 import json
+import math
 
 def user_login(request):
     if request.method == 'POST':
@@ -32,11 +33,13 @@ def user_register(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
+            Profile.objects.create(user=user, level=1, points=0)
             login(request, user)
             return redirect('home')  # gdzie 'home' to nazwa adresu URL do przekierowania po zalogowaniu
     else:
         form = UserCreationForm()
     return render(request, 'base/register.html', {'form': form})
+
 
 def user_logout(request):
     logout(request)
@@ -59,6 +62,14 @@ def home(request):
             # Now you can use processed_image in your neural network
             # Example: neural_network.predict(processed_image)
             if is_mushrooom:
+                # dodanie punktó użytkownikowi za znalezienie grzyba
+                profile = Profile.objects.get(user=request.user)
+                profile.points += math.ceil(5 / profile.level)
+                if profile.points >= 100:
+                    profile.points = profile.points - 100
+                    profile.level += 1
+                profile.save()
+
                 request.session['uploaded_image'] = data_uri
                 # classification with NN here
                 result_name, pred_prob = "muchomor", 88
@@ -95,7 +106,8 @@ def abc(request):
     return render(request, 'base/abc.html', context)
 
 def profile(request):
-    context = {}
+    profile = Profile.objects.get(user=request.user)
+    context = {'profile': profile}
     return render(request, 'base/profile.html', context)
 
 
@@ -182,6 +194,16 @@ def course_test(request, pk):
             course_score = CourseScore.objects.get(user=request.user, course=course)
             course_score.score = percentage_score
             course_score.save()
+            if (course_score.passed == False) and (percentage_score >= course.threshold):
+                profile = Profile.objects.get(user=request.user)
+                profile.points += course.points
+                if profile.points >= 100:
+                    profile.points = profile.points - 100
+                    profile.level += 1
+                course_score.passed = True
+                course_score.save()
+                profile.save()
+
             return redirect('courses')
 
         except CourseScore.DoesNotExist:
