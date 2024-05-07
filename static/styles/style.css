@@ -88,6 +88,13 @@
     width: 1px;
     height: 330px;
   }
+
+  .separator-vertical-register {
+    width: 1px;
+    height: 660px;
+    background-color: black;
+    margin: 0 20px;
+    }
 }
 
 /* login and register form */
