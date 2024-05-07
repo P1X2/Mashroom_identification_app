@@ -52,15 +52,12 @@ def home(request):
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
             uploaded_image = request.FILES['image']
-            # Open the uploaded image with PIL
+
             img = Image.open(uploaded_image)
-            is_mushrooom = is_mushroom_classify_img(img)
-            # img = img.resize((100, 100))
-            # processed_image = process_image(img)
+            is_mushrooom = is_mushroom_classify_img_2(img)
+
             data_uri = pil_to_data_uri(img)
-            # processed_image = process_image(img)
-            # Now you can use processed_image in your neural network
-            # Example: neural_network.predict(processed_image)
+
             if is_mushrooom:
                 # dodanie punktó użytkownikowi za znalezienie grzyba
                 profile = Profile.objects.get(user=request.user)
@@ -72,8 +69,8 @@ def home(request):
 
                 request.session['uploaded_image'] = data_uri
                 # classification with NN here
-                result_name, pred_prob = "muchomor", 88
-                mushroom = Mushroom.objects.get(name=result_name)
+                result_id, pred_prob = 0, 88
+                mushroom = Mushroom.objects.get(nn_id=result_id)
                 return render(request, 'base/classification.html', {'image': data_uri, 'mushroom': mushroom, 'probability': pred_prob})
             else:
                 return render(request, 'base/no_mushroom.html', {})

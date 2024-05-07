@@ -13,13 +13,17 @@ class Profile(models.Model):
 # Create your models here.
 class Mushroom(models.Model):
     name = models.CharField(max_length=200)
-    specname = models.CharField(max_length=200)
-    characteristics = models.JSONField(null=True)
-    description = models.TextField(null=True, blank=True)
+    specname = models.CharField(max_length=200, default='nazwa lacinska')
+    characteristics = models.JSONField(null=True, default=dict(cecha='niebieski'))
+    description = models.TextField(null=True, blank=True, default='opis grzyba')
     edible = models.BooleanField(default=False)
+    nn_id = models.IntegerField(default=-1)
     img1 = models.ImageField(null=True, default="grzybki.jpeg")
     img2 = models.ImageField(null=True, default="grzybki.jpeg")
     img3 = models.ImageField(null=True, default="grzybki.jpeg")
+
+    def __str__(self):
+        return f'{self.name} ---- {self.nn_id}'
 
 
 class Recipe(models.Model):
