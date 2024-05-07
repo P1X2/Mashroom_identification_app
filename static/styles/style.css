@@ -1,7 +1,9 @@
 :root {
-  --primary-color: #3a9cb4;
-  --secondary-color: #245ace;
-  --background-color: #f8f9fa;
+  --primary-color: #467c3b;
+  --secondary-color: #135e29;
+  --third-color: #105023;
+  --fourth-color: #d7dfd1;
+  --background-color: #edf3e8;
   --login-color: rgb(255, 255, 255);
 }
 
@@ -161,7 +163,7 @@
 }
 
 #navbarContainer a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 #navbarLeftContainer {
@@ -210,11 +212,11 @@
 
 /* Styl dla elementów rozwijanego menu */
 .dropdown-content {
-  padding: 5px;
+  /* padding: 5px; */
   display: none;
   position: absolute;
   background-color: var(--secondary-color);
-  min-width: 160px;
+  min-width: 170px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   height: 100%;
@@ -222,17 +224,20 @@
 
 /* Styl dla linków w rozwijanym menu */
 .dropdown-content a {
-  border: solid;
-  border-radius: 10px;
-  padding: 12px 16px;
+  /* border: solid; */
+  /* border-radius: 10px; */
+  padding: 20px 16px;
   text-decoration: none;
-  display: block;
+  display: flex;
   text-align: center;
   justify-content: center;
+  margin: auto;
 }
 
 .dropdown-content a:hover {
-  background-color: var(--primary-color);
+  background-color: var(--third-color);
+  text-decoration: none;
+  font-size: large;
 }
 
 /* Pokazanie rozwijanego menu po najechaniu myszą */
@@ -324,15 +329,97 @@
   background-color: var(--secondary-color);
 }
 
+/* MUSHROOMS */
+
+.mushroomsContainer {
+  /* background-color: white; */
+  /* padding: 10px;
+  justify-content: center;
+  justify-items: center; */
+}
+
+.mushroomsContainer-text {
+  display: block;
+  justify-items: center;
+  /* background-color: #467c3b; */
+}
+
+.mushroomsContainer-text h2{
+  display: flex;
+  justify-content: center;
+  /* background-color: #ddd; */
+  margin: auto;
+  padding: 15px;
+}
+
+.mushroomsContainer-text input {
+  /* background-color: var(--background-color); */
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  margin-bottom: 15px;
+  border: solid 0.5px;
+  border-radius: 10px;
+  min-height: 20px;
+  padding: 8px;
+}
+
 .mushroom_photo {
   width: 30%;
   max-width: 100%;
   height: auto;
+  border-radius: 15px;
   /* width: 10px; */
 }
 
-#mushroom_list_holder:hover {
-  background-color: #30f274;
+.mushroom_list {
+  margin-top: 15px;
+}
+
+#mushroom_list_holder a{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 7px;
+  text-decoration: none;
+  border: solid 1px;
+  border-color: var(--primary-color);
+  border-radius: 15px;
+  background-color: var(--primary-color);
+
+}
+
+#mushroom_list_holder a:hover {
+  background-color: var(--secondary-color);
+}
+
+.mushroom_list_holder_info {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 300px; */
+  justify-content: center;
+  justify-items: center;
+  /* padding: 20px; */
+  margin: auto;
+  margin-left: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+.mushroom_specname span{
+  font-style: italic;
+  color: white;
+}
+
+.mushroom_name span {
+  color: white;
+}
+
+.mushroom_name p{
+  color: white;
 }
 
 #list_searchbar_holder {
@@ -341,6 +428,16 @@
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+#list_searchbar_holder form {
+  display: flex;
+  width: 25%;
+  min-width: 410px;
+  /* width: 100%; */
+  /* background-color: #4caf50; */
 }
 
 /* CLASSIFICATION PAGE */

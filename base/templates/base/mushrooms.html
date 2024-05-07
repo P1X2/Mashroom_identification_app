@@ -1,7 +1,7 @@
 {% extends 'main.html' %} {% block content %}
 
 <div class="mushroomsContainer">
-  <div>
+  <div class="mushroomsContainer-text">
     <h2>Grzyby, na które możesz natrafić</h2>
     <div id="list_searchbar_holder">
       <form method="GET" action="{% url 'mushrooms' %}">
@@ -11,14 +11,16 @@
           placeholder="Search for your favourite mushrooms"
         />
       </form>
-      <div>
+      <div class="mushroom_list">
         {% for mushroom in mushrooms %}
         <div id="mushroom_list_holder">
           <a href="{% url 'mushroom' mushroom.id %}">
-            <div class="mushroom_name"><span>{{mushroom.name}}</span></div>
-            <div><span>{{mushroom.specname}}</span></div>
-            <div><p>{{mushroom.description}}</p></div>
             <img class="mushroom_photo" src="{{ mushroom.img1.url }}" />
+            <div class="mushroom_list_holder_info">
+              <div class="mushroom_name"><span>{{mushroom.name}}</span></div>
+              <div class="mushroom_specname"><span>{{mushroom.specname}}</span></div>
+              <div class="mushroom_name"><p>{{mushroom.description}}</p></div>
+            </div>
           </a>
         </div>
         {% endfor %}
