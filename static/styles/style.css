@@ -96,7 +96,7 @@
     height: 660px;
     background-color: black;
     margin: 0 20px;
-    }
+  }
 }
 
 /* login and register form */
@@ -162,9 +162,9 @@
   text-decoration: none;
 }
 
-#navbarContainer a:hover {
-  /* text-decoration: underline; */
-}
+/* #navbarContainer a:hover { */
+/* text-decoration: underline; */
+/* } */
 
 #navbarLeftContainer {
   display: flex;
@@ -331,12 +331,12 @@
 
 /* MUSHROOMS */
 
-.mushroomsContainer {
-  /* background-color: white; */
-  /* padding: 10px;
+/* .mushroomsContainer { */
+/* background-color: white; */
+/* padding: 10px;
   justify-content: center;
   justify-items: center; */
-}
+/* } */
 
 .mushroomsContainer-text {
   display: block;
@@ -344,7 +344,7 @@
   /* background-color: #467c3b; */
 }
 
-.mushroomsContainer-text h2{
+.mushroomsContainer-text h2 {
   display: flex;
   justify-content: center;
   /* background-color: #ddd; */
@@ -377,7 +377,7 @@
   margin-top: 35px;
 }
 
-#mushroom_list_holder a{
+#mushroom_list_holder a {
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -391,7 +391,6 @@
   background-color: var(--primary-color);
   /* min-width: 300px; */
   max-width: 850px;
-  
 }
 
 /* @media only screen and (min-width: 600px) {
@@ -399,7 +398,6 @@
     max-width: 70%;
   }
 } */
-
 
 #mushroom_list_holder a:hover {
   background-color: var(--secondary-color);
@@ -418,7 +416,7 @@
   text-decoration: none;
 }
 
-.mushroom_specname span{
+.mushroom_specname span {
   font-style: italic;
   color: white;
 }
@@ -427,7 +425,7 @@
   color: white;
 }
 
-.mushroom_name p{
+.mushroom_name p {
   color: white;
 }
 
@@ -542,3 +540,53 @@
 }
 
 /* SLIDER END */
+
+/* change password */
+/* Stylizacja formularza */
+.custom-password-change-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Stylizacja etykiet pól formularza */
+.custom-password-change-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Stylizacja pól formularza */
+.custom-password-change-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Stylizacja przycisku formularza */
+.custom-password-change-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Stylizacja przycisku formularza po najechaniu */
+.custom-password-change-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Stylizacja komunikatów o błędach */
+.custom-password-change-form .error-message {
+  color: #ff0000;
+  margin-top: 5px;
+}

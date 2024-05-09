@@ -4,4 +4,7 @@
 <p>Poziom: {{ profile.level }}</p>
 <progress value="{{ profile.points }}" max="100"></progress>
 <p>{{ profile.points }}/100</p>
+
+<div><a href="{% url 'edit_username' %}">Zmień Nazwę użytkownika</a></div>
+<div><a href="{% url 'edit_password' %}">Zmień hasło</a></div>
 {% endblock %}

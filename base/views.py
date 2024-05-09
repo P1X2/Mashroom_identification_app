@@ -10,6 +10,33 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import logout
 import json
 import math
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from .forms import ChangeUsernameForm, CustomPasswordChangeForm
+
+def edit_username(request):
+    if request.method == 'POST':
+        form = ChangeUsernameForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  # Przekierowanie na stronę profilu
+    else:
+        form = ChangeUsernameForm(instance=request.user)
+    return render(request, 'base/edit_username.html', {'form': form})
+
+
+def edit_password(request):
+    if request.method == 'POST':
+        form = CustomPasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Uaktualnienie sesji z nowym hasłem
+            return redirect('profile')  # Przekierowanie na stronę profilu po pomyślnej zmianie hasła
+    else:
+        form = CustomPasswordChangeForm(user=request.user)
+    return render(request, 'base/edit_password.html', {'form': form})
+
 
 def user_login(request):
     if request.method == 'POST':
