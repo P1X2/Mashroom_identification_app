@@ -6,8 +6,8 @@
 <div id="navbarContainer">
   <div id="navbarLeftContainer">
     <div class="dropdown-left">
-      <button class="dropbtn" onclick="changeTab('dropdown-left')">
-        <i class="fas fa-bars white"></i>
+      <button class="dropbtn" onclick="changeTab('dropdown-left', 'fa-bars')">
+        <i id="menuIcon" class="fas fa-bars white"></i>
       </button>
       <div class="dropdown-content dropdown-left">
         <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
@@ -23,8 +23,8 @@
 
   <div id="navbarRightContainer">
     <div class="dropdown-right">
-      <button class="dropbtn" onclick="changeTab('dropdown-right')">
-        <i class="fas fa-user white"></i>
+      <button class="dropbtn" onclick="changeTab('dropdown-right', 'fa-user')">
+        <i id="userIcon" class="fas fa-user white"></i>
       </button>
       <div class="dropdown-content dropdown-right">
         {% if user.is_authenticated %}

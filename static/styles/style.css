@@ -1,10 +1,23 @@
 :root {
-  --primary-color: #467c3b;
+  /* --primary-color: #467c3b;
   --secondary-color: #135e29;
   --third-color: #105023;
   --fourth-color: #d7dfd1;
   --background-color: #edf3e8;
+  --login-color: rgb(255, 255, 255); */
+  --primary-color: #345a25;
+  --secondary-color: #29381b;
+  --third-color: #000000;
+  --fourth-color: #d7dfd1;
+  --background-color: #dddfdc;
   --login-color: rgb(255, 255, 255);
+  --courses-color: rgb(255, 255, 255);
+  --courses-element-color: rgb(211, 123, 72);
+  --abc-element-color: rgb(35, 175, 110);
+  --mushrooms-element-color: rgb(243, 199, 1);
+
+
+
 }
 
 .white {
@@ -146,12 +159,16 @@
 /* NAVBAR */
 #navbarContainer {
   background-color: var(--primary-color);
+  border-bottom: solid 1px;
+  border-color: white;
+  /* border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px; */
   display: flex;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50%;
   flex-wrap: wrap;
-
+  padding: auto;
   place-items: center;
   width: 100%;
   justify-items: center;
@@ -169,7 +186,7 @@
 #navbarLeftContainer {
   display: flex;
   justify-content: center;
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
 }
 
 #navbarRightContainer {
@@ -189,6 +206,9 @@
   padding: 10px;
   font-size: 16px;
   border: none;
+  border-bottom: solid 0.5px;
+  border-radius: 15px;
+  border-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -213,6 +233,8 @@
 /* Styl dla elementów rozwijanego menu */
 .dropdown-content {
   /* padding: 5px; */
+  border-top: solid 1px;
+  border-color: white;
   display: none;
   position: absolute;
   background-color: var(--secondary-color);
@@ -220,24 +242,30 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   height: 100%;
+  width: 40%;
+  max-width: 300px;
 }
 
 /* Styl dla linków w rozwijanym menu */
 .dropdown-content a {
   /* border: solid; */
   /* border-radius: 10px; */
-  padding: 20px 16px;
+  padding: 20px 0px 20px 0px;
   text-decoration: none;
   display: flex;
   text-align: center;
   justify-content: center;
   margin: auto;
+  border-bottom: solid 0.5px;
+  border-color: white;
+  width: 75%;
 }
 
 .dropdown-content a:hover {
   background-color: var(--third-color);
   text-decoration: none;
-  font-size: large;
+  width: 100%;
+  margin: auto;
 }
 
 /* Pokazanie rozwijanego menu po najechaniu myszą */
@@ -331,12 +359,15 @@
 
 /* MUSHROOMS */
 
-/* .mushroomsContainer { */
-/* background-color: white; */
-/* padding: 10px;
+.mushroomsContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+  /* padding: 10px;
   justify-content: center;
   justify-items: center; */
-/* } */
+}
 
 .mushroomsContainer-text {
   display: block;
@@ -385,10 +416,10 @@
   margin-top: 5px;
   padding: 7px;
   text-decoration: none;
-  border: solid 1px;
-  border-color: var(--primary-color);
+  border: solid 0px;
+  /* border-color: var(--primary-color); */
   border-radius: 15px;
-  background-color: var(--primary-color);
+  background-color: var(--mushrooms-element-color);
   /* min-width: 300px; */
   max-width: 850px;
 }
@@ -568,10 +599,10 @@
 
 .abc-element a {
   display: flex;
-  background-color: var(--primary-color);
+  background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
-  margin: 10px 10px 0px 0px; 
+  margin: 10px 0px 0px 0px; 
   width: 80%;
   max-width: 800px;
   justify-content: center;
@@ -583,6 +614,65 @@
 }
 
 .abc-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ABC1 */
+.abc1-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #a0ccad;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.abc1-container img {
+  width: 80%;
+  max-width: 700px
+  /* margin: ; */
+}
+
+/* COURSES */
+#coursesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  align-items: center;
+  background-color: var(--courses-color);
+  min-height: 100vh;
+}
+
+.courses-element {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  /* background-color: #135e29; */
+}
+
+.courses-element a {
+  display: flex;
+  background-color: var(--courses-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.courses-element a:hover {
   background-color: var(--secondary-color);
 }
 

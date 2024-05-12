@@ -24,18 +24,28 @@ function previousImage() {
   imageElement.src = images[currentImageIndex];
 }
 
-function changeTab(selector_side) {
+function changeTab(selector_side, icon_id) {
   const selector = "." + selector_side + " .dropdown-content";
-  var tab = document.querySelector(selector);
 
-  // var rootStyles = window.getComputedStyle(document.documentElement);
-  // var secondaryColor = rootStyles.getPropertyValue("--secondary-color");
-  // var primaryColor = rootStyles.getPropertyValue("--primary-color");
+  var tab = document.querySelector(selector);
+  var menu_icon = document.getElementById("menuIcon")
+  var user_icon = document.getElementById("userIcon")
+
+  if (icon_id == "fa-bars") {
+    var icon = menu_icon;
+  }
+  else {
+    var icon = user_icon;
+  }
 
   if (tab.style.display === "none") {
     tab.style.display = "block";
+    icon.classList.remove(icon_id);
+    icon.classList.add('fa-times');
   } else {
     tab.style.display = "none";
+    icon.classList.remove("fa-times");
+    icon.classList.add(icon_id);
   }
 }
 

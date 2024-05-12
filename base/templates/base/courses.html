@@ -1,19 +1,19 @@
 {% extends 'main.html' %} {% block content %} {% if user.is_authenticated %}
 <div id="coursesContainer">
+  <div class="courses-element">
   {% for course in courses %}
-  <div>
     <a href="{% url 'course_theory' course.id %}">{{ course.name }}</a>
     {% for score in scores %} {% if score.course.id == course.id %}
     <div>Wynik: {{ score.score }}</div>
     {% endif %}{% endfor %}
-  </div>
   {% endfor %}
+  </div>
 </div>
 {% else %}
 
 <div id="coursesContainer">
   {% for course in courses %}
-  <div>
+  <div class="courses-element">
     <a href="{% url 'course_theory' course.id %}">{{ course.name }}</a>
   </div>
   {% endfor %}
