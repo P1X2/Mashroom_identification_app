@@ -1,12 +1,19 @@
 {% extends 'main.html' %} {% block content %}
 
 <div id="categoriesRecpiesContainer">
-  <div><a href="{% url 'recipes' %}?text=Naszybko">Na szybko</a></div>
-  <div><a>Sosy</a></div>
-  <div><a>Suszenie</a></div>
-  <div><a>Zupy</a></div>
-  <div><a>Makarony</a></div>
-  <div><a>Smażone</a></div>
+  <div class="category-info">
+    <h2>Przepisy</h2>
+  </div>
+  <div class="category-content">
+    <div class="categories-recipes-element">
+      <a href="{% url 'recipes' %}?text=Naszybko">Na szybko</a>
+      <a>Sosy</a>
+      <a>Suszenie</a>
+      <a>Zupy</a>
+      <a>Makarony</a>
+      <a>Smażone</a>
+    </div>
+</div>
 </div>
 
 {% endblock %}

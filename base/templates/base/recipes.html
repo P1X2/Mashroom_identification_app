@@ -1,12 +1,23 @@
 {% extends 'main.html' %} {% block content %}
 
-<div>
-  {% for recipe in recipes %}
-  <div>
-    <a href="{% url 'recipe' recipe.id %}">{{ recipe.name }}</a
-    ><span>{{ recipe.preptime }}min</span>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-D4m2sr+wpueJOsV8hI7xgh2X1mF6TzcgkE0a1CQZpWI7oxpRqVgqQw+km6FemPvd3CCnDtJ1FJhGb2zGusfB+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div id="categoriesRecpiesContainer">
+  <div class="category-info">
+    <!-- <h2>{{ recipes }}</h2> -->
+    <!-- "{% url 'recipes' %}?text=Naszybko" -->
+    <h2>Na szybko</h2>
   </div>
-  {% endfor %}
+  <div class="category-content">
+    {% for recipe in recipes %}
+    <div class="recipes-element">
+      <a href="{% url 'recipe' recipe.id %}">{{ recipe.name }}</a>
+      <hr class="recipes-separator" />
+      <i class="fas fa-clock"></i>
+      <span>{{ recipe.preptime }}min</span>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

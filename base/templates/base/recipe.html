@@ -1,27 +1,37 @@
 {% extends 'main.html' %} {% block content %}
 
-<div>
-  <head>
-    {{ recipe.name }}
-  </head>
-  <img class="recipe_photo" src="{{ recipe.img1.url }}" />
-  <div>
-    <span>Składniki:</span>
-    <ul>
-      {% for ingredient, quantity in recipe.ingredients.items %}
-      <li>{{ ingredient }} - {{ quantity }}</li>
-      {% endfor %}
-    </ul>
+<div id="categoriesRecpiesContainer">
+  <div class="category-info">
+    <h2>{{ recipe.name }}</h2>
   </div>
-  <div>
-    <span>Przygotowanie:</span>
-    <ul>
-      {% for number, instruction in recipe.instructions.items %}
-      <li>{{ number }} - {{ instruction }}</li>
-      {% endfor %}
-    </ul>
+  <div class="recipe-content">
+    <div class="recipe-content-text">
+      <span>Składniki:</span>
+      <ul>
+        {% for ingredient, quantity in recipe.ingredients.items %}
+        <li>{{ ingredient }} - {{ quantity }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="recipe-content-img">
+      <img class="recipe_photo" src="{{ recipe.img1.url }}" />
+    </div>
+
+    <div class="recipe-content-text">
+      <span>Przygotowanie:</span>
+      <ul>
+        {% for number, instruction in recipe.instructions.items %}
+        <li>{{ number }} - {{ instruction }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="recipe-content-img">
+      <img class="recipe_photo" src="{{ recipe.img2.url }}" />
+    </div>  
   </div>
-  <img class="recipe_photo" src="{{ recipe.img2.url }}" />
+
 </div>
 
 {% endblock %}
