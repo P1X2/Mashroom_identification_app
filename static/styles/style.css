@@ -5,17 +5,19 @@
   --fourth-color: #d7dfd1;
   --background-color: #edf3e8;
   --login-color: rgb(255, 255, 255); */
-  --primary-color: #345a25;
-  --secondary-color: #29381b;
-  --third-color: #000000;
+  --primary-color: #107425;
+  --secondary-color: #04db33ab;
+  --third-color: #f3f0f0;
   --fourth-color: #d7dfd1;
   --background-color: #dddfdc;
   --login-color: rgb(255, 255, 255);
   --courses-color: rgb(255, 255, 255);
   --courses-element-color: rgb(211, 123, 72);
-  --abc-element-color: rgb(35, 175, 110);
+  --abc-element-color: #04db32;
   --mushrooms-element-color: rgb(243, 199, 1);
 
+  --tab-color: #011d46;
+  --tab-hover-color: #032a57;
 
 
 }
@@ -30,6 +32,7 @@
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
+  background-color: var(--primary-color);
   justify-content: center;
   align-items: center;
 }
@@ -158,126 +161,121 @@
 
 /* NAVBAR */
 #navbarContainer {
-  background-color: var(--primary-color);
-  /* border-bottom: solid 1px; */
-  /* border-color: white; */
-  /* border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px; */
   display: flex;
-  justify-content: space-between;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50%;
-  flex-wrap: wrap;
-  padding: auto;
-  place-items: center;
   width: 100%;
-  justify-items: center;
+  background-color: var(--primary-color);
+  min-height: 50px;
 }
 
-#navbarContainer a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-/* #navbarContainer a:hover { */
-/* text-decoration: underline; */
-/* } */
-
-#navbarLeftContainer {
-  display: flex;
-  justify-content: center;
-  /* background-color: #4caf50; */
-}
-
-#navbarRightContainer {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-
-.navbarTextContainer {
-  margin: 10px;
-}
-
-/* Style dla przycisku rozwijającego menu */
 .dropbtn {
   background-color: var(--primary-color);
-  color: rgb(3, 3, 3);
-  padding: 10px;
-  font-size: 16px;
   border: none;
-  border-bottom: solid 0.5px;
-  border-radius: 15px;
-  border-color: var(--primary-color);
-  cursor: pointer;
+  border: solid 0px;
+  border-radius: 40px;
+  padding: 0px 20px 0px 20px;
 }
 
-.dropbtn:hover {
-  border-radius: 1px;
+/* .dropbtn:hover {
   background-color: var(--secondary-color);
-}
+} */
 
-/* Styl dla kontenera menu rozwijanego */
 .dropdown-left {
-  position: static;
-  display: inline-block;
-  left: 0%;
+  display: flex;
+  width: 100%;
+  height: 50px;
 }
 
 .dropdown-right {
-  position: static;
-  display: inline-block;
-  right: 0%;
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  height: 50px;
 }
 
-/* Styl dla elementów rozwijanego menu */
-.dropdown-content {
-  /* padding: 5px; */
-  border-top: solid 1px;
-  border-color: white;
+.dropdown-content-left {
+  flex-direction: column;
   display: none;
   position: absolute;
-  background-color: var(--secondary-color);
-  min-width: 170px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  height: 100%;
-  width: 40%;
-  max-width: 300px;
-}
-
-/* Styl dla linków w rozwijanym menu */
-.dropdown-content a {
-  /* border: solid; */
-  /* border-radius: 10px; */
-  padding: 20px 0px 20px 0px;
-  text-decoration: none;
-  display: flex;
-  text-align: center;
+  /* position: static; */
+  background-color: var(--tab-color);
+  min-height: 100vh;
+  width: 50%;
   justify-content: center;
-  margin: auto;
-  border-bottom: solid 0.5px;
-  border-color: white;
-  width: 75%;
+  justify-items: center;
+  align-items: center;
+  border-right: solid 0px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.dropdown-content a:hover {
-  background-color: var(--third-color);
+.dropdown-content-left a{
+  display: flex;
   text-decoration: none;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   width: 100%;
-  margin: auto;
+  height: 50px;
+  margin: 0;
 }
 
-/* Pokazanie rozwijanego menu po najechaniu myszą */
-/* .dropdown-left:hover .dropdown-content {
-    display: block;
-    left: 0%;
-  }
+.dropdown-content-left a:hover {
+  background-color: var(--tab-hover-color);
+  width: 100%;
+}
 
-  .dropdown-right:hover .dropdown-content {
-    display: block;
-    right: 0%;
-  } */
+
+.dropdown-content-right {
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  /* position: static; */
+  background-color: var(--tab-color);
+  min-height: 100vh;
+  width: 50%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-right: solid 0px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  margin: 0;
+  margin-left: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.nav {
+  display: flex;
+}
+
+.dropdown-content-right a{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+
+.dropdown-content-right a:hover {
+  background-color: var(--tab-hover-color);
+  width: 100%;
+}
+
+.logout-icon {
+  padding-left: 10px;
+}
+
+.icon-padding {
+  padding-left: 10px;
+}
+
 
 /* HOME */
 #homeContainer {
@@ -290,29 +288,19 @@
   margin-top: 5%;
 }
 
-/* .upload-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  } */
-
 .upload-form {
   display: block;
   width: 380px;
   padding: 30px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   align-items: center;
   justify-content: center;
   justify-items: center;
+  /* height: 100vh; */
 }
 
 @media screen and (max-width: 480px) {
@@ -338,7 +326,7 @@
   margin-top: 5px;
   font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .upload-form button[type="submit"] {
@@ -346,10 +334,10 @@
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: var(--primary-color);
+  background-color: var(--abc-element-color);
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -358,33 +346,206 @@
 }
 
 /* MUSHROOMS */
-
 .mushroomsContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: white;
-  /* padding: 10px;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
   justify-content: center;
-  justify-items: center; */
+  justify-items: center;
+  align-items: center;
+}
+
+.mushrooms-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mushrooms-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--abc-element-color);
+  height: 15%;
+}
+
+.mushrooms-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+.mushrooms-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.mushrooms-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.mushrooms-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mushrooms-searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  /* background-color: #0056b3; */
+}
+
+.mushrooms-searchbar input {
+  display: flex;
+  /* width: 100%; */
+  margin: auto;
+  align-items: center;
+  /* margin-bottom: 15px; */
+  border: solid 0.5px;
+  border-radius: 10px;
+  min-height: 30px;
+  min-width: 250px;
+  padding: 0px 10px 0px 10px;
+  border: solid 0.5px;
+  border-color: #aaa8a8;
+}
+
+.mushroom-photo {
+  /* width: 40%; */
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  /* background-color: #0056b3; */
+  width: 40%;
+  max-width: 100%;
+  height: auto;
+  /* border: solid 0.5px; */
+  border-radius: 15px;
+  /* border-color: rgb(104, 104, 104); */
+
+}
+
+.mushroom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  /* background-color:violet; */
+  margin: 0px;
+  padding: 0px;
+  width: 70%;
+  height: 100%;
+}
+
+.mushroom-name  {
+  font-size: 15px;
+  /* background-color: #007bff; */
+  margin: 0px;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.mushroom-specname  {
+  /* background-color: yellow; */
+  font-size: small;
+  font-style: italic;
+  margin: 0px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.mushroom-name p {
+  font-size: small;
+}
+
+.welcome-text {
+  display: flex;
+  width: 100%;
+  /* background-color: yellow; */
+  margin: 0;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  /* padding: 10px 0px 10px 0px; */
+  /* min-height: 50%; */
+  padding: 0px;
+  height: 10vh;
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #007bff; */
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.welcome-text h2 {
+  font-size: medium;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+
 }
 
 .mushroomsContainer-text {
   display: block;
   justify-items: center;
-  /* background-color: #467c3b; */
 }
 
 .mushroomsContainer-text h2 {
   display: flex;
   justify-content: center;
-  /* background-color: #ddd; */
   margin: auto;
   padding: 15px;
 }
 
 .mushroomsContainer-text input {
-  /* background-color: var(--background-color); */
   display: flex;
   width: 100%;
   margin: auto;
@@ -401,7 +562,6 @@
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  /* width: 10px; */
 }
 
 .mushroom_list {
@@ -579,7 +739,7 @@
 #abcContainer {
   display: flex;
   flex-direction: column;
-  /* background-color: #6486aa; */
+  background-color: var(--primary-color);
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -588,7 +748,7 @@
 }
 
 .abc-element {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -617,6 +777,37 @@
   background-color: var(--secondary-color);
 }
 
+.abc-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.abc-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.abc-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+
 /* ABC1 */
 .abc1-container {
   display: flex;
@@ -636,29 +827,26 @@
 #coursesContainer {
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-color);
   width: 100%;
   height: 100%;
-  /* justify-content: center; */
-  /* justify-items: center; */
+  justify-content: center;
+  justify-items: center;
   align-items: center;
-  background-color: var(--courses-color);
-  min-height: 100vh;
 }
 
 .courses-element {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
   width: 100%;
-  /* background-color: #135e29; */
 }
 
 .courses-element a {
   display: flex;
-  background-color: var(--courses-element-color);
+  background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
   margin: 10px 0px 0px 0px; 
@@ -676,50 +864,113 @@
   background-color: var(--secondary-color);
 }
 
-/* RECIPES */
-#categoriesRecpiesContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  background-color: var(--courses-color);
-  min-height: 100vh;
-}
-
-.category-info {
+.courses-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   background-color: var(--primary-color);
   border-bottom: solid 0px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  margin-bottom: 40px;
 }
 
-.category-info h2 {
+.courses-info h2 {
   color: white;
+  font-size: larger;
 }
 
-.category-content {
+.courses-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
-.categories-recipes-element {
+.courses-element-text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+}
+
+.courses-element-img{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.courses-element-img img {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px 0px 20px 0px;
+}
+
+
+/* RECIPES */
+#categoriesRecpiesContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.categories-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
 }
 
-.categories-recipes-element a {
+.categories-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.categories-content {
   display: flex;
-  background-color: var(--courses-element-color);
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.categories-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.categories-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
   margin: 10px 0px 0px 0px; 
@@ -731,9 +982,11 @@
   height: 50px;
   color: white;
   text-decoration: none;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
 }
 
-.categories-recipes-element a:hover {
+.categories-element a:hover {
   background-color: var(--secondary-color);
 }
 
@@ -847,10 +1100,10 @@
   color: #f10606;
 }
 
-.mushroom-name {
+/* .mushroom-name {
   font-size: 24px;
   margin-top: 10px;
-}
+} */
 
 .additional-images {
   overflow-x: auto;

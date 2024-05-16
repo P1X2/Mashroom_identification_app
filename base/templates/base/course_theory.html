@@ -1,13 +1,21 @@
 {% extends 'main.html' %} {% block content %}
 
 <div id="coursesContainer">
-  {% for item in theory_items %}
-  <div>{{ item.content }}</div>
-  {% if item.image %}
-  <img src="{{ item.image.url }}" alt="Theory Image" />
-  {% endif %} {% endfor %}
-</div>
+  <div class="courses-info">
+    <h2>Kurs - {{ course.name }}</h2>
+  </div>
+  <div class="courses-content">
+    {% for item in theory_items %}
+    <div class="courses-element-text">{{ item.content }}</div>
+    {% if item.image %}
+    <div class="courses-element-img">
+      <img src="{{ item.image.url }}" alt="Theory Image" />
+    </div>
+    {% endif %} 
+    {% endfor %}
+  </div>
 
-{% if user.is_authenticated %}
-<div><a href="{% url 'course_test' course.id %}">Sprawdź się</a></div>
-{% endif %} {% endblock %}
+  {% if user.is_authenticated %}
+  <div><a href="{% url 'course_test' course.id %}">Sprawdź się</a></div>
+</div>
+  {% endif %} {% endblock %}

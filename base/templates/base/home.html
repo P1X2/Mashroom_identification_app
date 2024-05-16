@@ -2,12 +2,12 @@
 
 <div id="homeContainer">
   <div class="upload-form">
-    <h2>Upload Image</h2>
+    <h2>Załącz zdjęcie</h2>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <!-- <label for="id_image">Choose Image:</label> -->
       <input type="file" name="image" id="id_image" accept="image/*" />
-      <button type="submit">Upload Image</button>
+      <button type="submit">Identyfikuj</button>
     </form>
   </div>
 </div>

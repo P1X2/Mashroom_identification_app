@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-D4m2sr+wpueJOsV8hI7xgh2X1mF6TzcgkE0a1CQZpWI7oxpRqVgqQw+km6FemPvd3CCnDtJ1FJhGb2zGusfB+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div id="categoriesRecpiesContainer">
-  <div class="category-info">
+  <div class="categories-info">
     <!-- <h2>{{ recipes }}</h2> -->
     <!-- "{% url 'recipes' %}?text=Naszybko" -->
     <h2>Na szybko</h2>
   </div>
-  <div class="category-content">
+  <div class="categories-content">
     {% for recipe in recipes %}
     <div class="recipes-element">
       <a href="{% url 'recipe' recipe.id %}">{{ recipe.name }}</a>

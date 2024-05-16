@@ -1,41 +1,93 @@
 <link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+<div class="nav">
+  <div class="dropdown-content-left">
+  <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
+  <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
+  <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
+  <a href="{% url 'courses' %}" class="navbarTextContainer">Kursy</a>
+  <a href="{% url 'recipes_categories' %}" class="navbarTextContainer">Przepisy</a>
+</div>
 
 <div id="navbarContainer">
+
+  <div class="dropdown-left">    
+    <button class="dropbtn" onclick="changeTabLeft('.dropdown-content-left', 'fa-bars')">
+      <i id="menuIcon" class="fas fa-bars white"></i>
+    </button>
+  </div>
+
+  <div class="dropdown-right">
+    <button class="dropbtn" onclick="changeTabRight('.dropdown-content-right', 'fa-user')">
+      <i id="userIcon" class="fas fa-user white"></i>
+    </button>  
+  </div>
+
+</div>
+
+<div class="dropdown-content-right">
+  {% if user.is_authenticated %}
+  <!-- <div class="welcome-text">
+    Witaj, <p>{{ user.username }}</p>!
+    Miło Cię znowu widzieć.
+  </div> -->
+  <!-- <div class="user-content"> -->
+    <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
+  <a href="{% url 'profile' %}" class="navbarTextContainer">Mój profil</a>
+  <a href="{% url 'logout' %}" class="navbarTextContainer">Wyloguj
+    <i class="fas fa-sign-out-alt logout-icon"></i>
+  </a>
+  <!-- </div> -->
+  {% else %}
+
+  <!-- Treść dostępna tylko dla niezalogowanych użytkowników -->
+  <a href="{% url 'login' %}" class="navbarTextContainer">Zaloguj
+    <i class="fas fa-lock icon-padding"></i>
+  </a>
+  <a href="{% url 'register' %}" class="navbarTextContainer">Zarejestruj
+    <i class="fas fa-arrow-up icon-padding"></i>
+  </a>
+  {% endif %}
+</div>
+
+</div>
+
+
+
+<!-- <div id="navbarContainer">
   <div id="navbarLeftContainer">
     <div class="dropdown-left">
       <button class="dropbtn" onclick="changeTab('dropdown-left', 'fa-bars')">
         <i id="menuIcon" class="fas fa-bars white"></i>
       </button>
       <div class="dropdown-content dropdown-left">
-        <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a>
-        <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
+        <a href="{% url 'home' %}" class="navbarTextContainer">Identyfikacja</a> -->
+        <!-- <a href="{% url 'mushrooms' %}" class="navbarTextContainer">Grzyby</a>
         <a href="{% url 'abc' %}" class="navbarTextContainer">ABC grzybiarza</a>
         <a href="{% url 'courses' %}" class="navbarTextContainer">Kursy</a>
         <a href="{% url 'recipes_categories' %}" class="navbarTextContainer"
-          >Przepisy</a
-        >
-      </div>
+          >Przepisy</a> -->
+      <!-- </div>
     </div>
-  </div>
-
-  <div id="navbarRightContainer">
+  </div> -->
+  
+  <!-- <div id="navbarRightContainer">
     <div class="dropdown-right">
       <button class="dropbtn" onclick="changeTab('dropdown-right', 'fa-user')">
         <i id="userIcon" class="fas fa-user white"></i>
       </button>
       <div class="dropdown-content dropdown-right">
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %} -->
         <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
-        <h2>Witaj, {{ user.username }}!</h2>
+        <!-- <h2>Witaj, {{ user.username }}!</h2>
         <a href="{% url 'profile' %}" class="navbarTextContainer">Profile</a>
         <a href="{% url 'logout' %}" class="navbarTextContainer">wyloguj</a>
-        {% else %}
+        {% else %} -->
 
         <!-- Treść dostępna tylko dla niezalogowanych użytkowników -->
-        <a href="{% url 'login' %}" class="navbarTextContainer">zaloguj</a>
+        <!-- <a href="{% url 'login' %}" class="navbarTextContainer">zaloguj</a>
         <a href="{% url 'register' %}" class="navbarTextContainer"
           >zarejestruj</a
         >
@@ -43,4 +95,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
