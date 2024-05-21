@@ -1,7 +1,91 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<div>abc 2</div>
-<h1>Gdzie szukać grzybów</h1>
-<img src="{% static 'images/hatchback.jpg' %}" alt="zdj do abc" />
-<span>cos tam cos tam</span>
+<header id="main-header-abc2" class="header-abc2">
+  <h1 id="main-title-abc2" class="title-abc2">Gdzie Szukać Grzybów</h1>
+</header>
+
+<main id="main-content-abc2" class="content-abc2">
+  <section class="intro-abc2" id="intro-section-abc2">
+    <div class="section-container-abc2" id="intro-container-abc2">
+      <h2 id="intro-title-abc2" class="section-title-abc2">
+        Wprowadzenie do Grzybobrania
+      </h2>
+      <p id="intro-text-abc2" class="section-text-abc2">
+        Szukanie grzybów to nie tylko hobby, ale również wspaniały sposób na
+        spędzanie czasu na łonie natury. W tym poradniku dowiesz się, gdzie
+        najlepiej szukać grzybów oraz jakie miejsca są najbardziej obiecujące.
+      </p>
+    </div>
+  </section>
+
+  <section class="locations-abc2" id="locations-section-abc2">
+    <div class="section-container-abc2" id="locations-container-abc2">
+      <h2 id="locations-title-abc2" class="section-title-abc2">
+        Najlepsze Miejsca na Grzybobranie
+      </h2>
+      <ul id="locations-list-abc2" class="list-abc2">
+        <li id="location-1-abc2" class="list-item-abc2">
+          Las liściasty - w szczególności pod dębami i bukami (<!-- Zdjęcie lasu liściastego z dębami i bukami -->)
+        </li>
+        <li id="location-2-abc2" class="list-item-abc2">
+          Las iglasty - w pobliżu sosen i świerków (<!-- Zdjęcie lasu iglastego z sosnami i świerkami -->)
+        </li>
+        <li id="location-3-abc2" class="list-item-abc2">
+          Polany leśne - szczególnie te, które są wilgotne i zacienione (<!-- Zdjęcie polany leśnej, wilgotnej i zacienionej -->)
+        </li>
+        <li id="location-4-abc2" class="list-item-abc2">
+          Brzegi strumieni i mokradła - miejsca z wysoką wilgotnością (<!-- Zdjęcie brzegu strumienia lub mokradła -->)
+        </li>
+        <li id="location-5-abc2" class="list-item-abc2">
+          Pod drzewami owocowymi - takie jak jabłonie lub grusze (<!-- Zdjęcie pod jabłonią lub gruszą -->)
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="photos-abc2" id="photos-section-abc2">
+    <div class="section-container-abc2" id="photos-container-abc2">
+      <h2 id="photos-title-abc2" class="section-title-abc2">
+        Galeria Miejsc Grzybobrania
+      </h2>
+      <div class="gallery-abc2" id="gallery-container-abc2">
+        <!-- Zdjęcie 1: Las liściasty z dębami i bukami -->
+        <img
+          src="{% static 'images/las_lisciasty.jpg' %}"
+          alt="Las liściasty z dębami i bukami"
+          class="gallery-image-abc2"
+          id="image-1-abc2"
+        />
+        <!-- Zdjęcie 2: Las iglasty z sosnami i świerkami -->
+        <img
+          src="{% static 'images/las_iglasty.jpg' %}"
+          alt="Las iglasty z sosnami i świerkami"
+          class="gallery-image-abc2"
+          id="image-2-abc2"
+        />
+        <!-- Zdjęcie 3: Polana leśna, wilgotna i zacieniona -->
+        <img
+          src="{% static 'images/zacieniona_polana.jpg' %}"
+          alt="Polana leśna, wilgotna i zacieniona"
+          class="gallery-image-abc2"
+          id="image-3-abc2"
+        />
+        <!-- Zdjęcie 4: Brzeg strumienia -->
+        <img
+          src="{% static 'images/strumien.jpg' %}"
+          alt="Brzeg strumienia"
+          class="gallery-image-abc2"
+          id="image-4-abc2"
+        />
+        <!-- Zdjęcie 5: Pod drzewem owocowym -->
+        <img
+          src="{% static 'images/drzewa_owocowe.jpg' %}"
+          alt="Pod drzewem owocowym"
+          class="gallery-image-abc2"
+          id="image-5-abc2"
+        />
+      </div>
+    </div>
+  </section>
+</main>
 {% endblock %}

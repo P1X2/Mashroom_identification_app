@@ -10,7 +10,8 @@
         <input
           type="text"
           name="q"
-          placeholder="Search for your favourite mushrooms"/>
+          placeholder="Search for your favourite mushrooms"
+        />
       </form>
     </div>
     {% for mushroom in mushrooms %}
@@ -18,21 +19,23 @@
       <a href="{% url 'mushroom' mushroom.id %}">
         <img class="mushroom-photo" src="{{ mushroom.img1.url }}" />
         <div class="mushroom-info">
-          <div class="mushroom-name">
-            {{mushroom.name}}
-          </div>
-          <div class="mushroom-specname">
+          <div class="mushroom-name">{{mushroom.name}}</div>
+          {% if mushroom.edible %}
+          <p class="mushroom-edible">JADALNY</p>
+          {% else %}
+          <p class="mushroom-inedible">NIEJADALNY</p>
+          {% endif %}
+          <!-- <div class="mushroom-specname">
             {{mushroom.specname}}
-          </div>
+          </div> -->
           <!-- <div class="mushroom-name">
             <p>{{mushroom.description}}</p>
           </div> -->
         </div>
       </a>
-      </div>
+    </div>
     {% endfor %}
   </div>
-</div>
 </div>
 
 {% endblock %}

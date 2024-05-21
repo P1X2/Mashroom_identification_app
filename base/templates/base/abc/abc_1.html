@@ -1,9 +1,60 @@
 {% extends 'main.html' %} {% load static %}{% block content %}
 
 <div class="abc1-container">
-    <div>abc 1</div>
-    <h1>Pierwsze grzybobranie</h1>
-    <img src="{% static 'images/hatchback.jpg' %}" alt="zdj do abc" />
-    <span>cos tam cos tam</span>
+  <header id="main-header-abc1">
+    <h1 id="main-title-abc1">Pierwsze Grzybobranie</h1>
+  </header>
+
+  <main id="main-content-abc1">
+    <section class="intro-abc1" id="intro-section-abc1">
+      <div class="section-container-abc1">
+        <h2>Witaj, Początkujący Grzybiarzu!</h2>
+        <p>
+          Cieszymy się, że zainteresowałeś się światem grzybów! Pierwsze
+          grzybobranie może być fascynującym doświadczeniem, ale pamiętaj, że
+          zdrowie jest najważniejsze. Poniżej znajdziesz najważniejsze
+          informacje dotyczące zbierania grzybów.
+        </p>
+      </div>
+    </section>
+
+    <section class="tips-abc1" id="tips-section-abc1">
+      <div class="section-container-abc1">
+        <h2>Porady dla Początkujących Grzybiarzy</h2>
+        <ul>
+          <li>
+            Nigdy nie zbieraj grzybów, których nie jesteś pewien. Bezpieczeństwo
+            jest najważniejsze!
+          </li>
+          <li>
+            Zawsze zabieraj ze sobą wiarygodne źródło informacji o grzybach oraz
+            książkę do rozpoznawania gatunków.
+          </li>
+          <li>
+            Nigdy nie konsumuj grzybów surowych. Zawsze należy je dokładnie
+            ugotować lub usmażyć.
+          </li>
+          <li>
+            Pamiętaj, żeby nie zanieczyszczać środowiska naturalnego. Zbieraj
+            grzyby ostrożnie i nie niszcz rosnących grzybów.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="photos-abc1" id="photos-section-abc1">
+      <div class="section-container-abc1">
+        <h2>Zdjęcia z Pierwszego Grzybobrania</h2>
+        <div class="gallery-abc1">
+          <!-- Zdjęcie 1: Kosz pełen zbieranych grzybów -->
+          <img
+            src="{% static 'images/kosz_z_grzybami.jpg' %}"
+            alt="Kosz z zbieranymi grzybami"
+            class="gallery-image-abc1"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
 {% endblock %}

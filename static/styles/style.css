@@ -18,8 +18,6 @@
 
   --tab-color: #011d46;
   --tab-hover-color: #032a57;
-
-
 }
 
 .white {
@@ -209,7 +207,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.dropdown-content-left a{
+.dropdown-content-left a {
   display: flex;
   text-decoration: none;
   color: white;
@@ -225,7 +223,6 @@
   background-color: var(--tab-hover-color);
   width: 100%;
 }
-
 
 .dropdown-content-right {
   flex-direction: column;
@@ -244,14 +241,13 @@
   margin: 0;
   margin-left: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-
 }
 
 .nav {
   display: flex;
 }
 
-.dropdown-content-right a{
+.dropdown-content-right a {
   display: flex;
   text-decoration: none;
   color: white;
@@ -275,7 +271,6 @@
 .icon-padding {
   padding-left: 10px;
 }
-
 
 /* HOME */
 #homeContainer {
@@ -371,7 +366,7 @@
   background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
-  margin: 10px 0px 0px 0px; 
+  margin: 10px 0px 0px 0px;
   width: 80%;
   max-width: 800px;
   justify-content: center;
@@ -455,7 +450,6 @@
   /* border: solid 0.5px; */
   border-radius: 15px;
   /* border-color: rgb(104, 104, 104); */
-
 }
 
 .mushroom-info {
@@ -471,7 +465,7 @@
   height: 100%;
 }
 
-.mushroom-name  {
+.mushroom-name {
   font-size: 15px;
   /* background-color: #007bff; */
   margin: 0px;
@@ -481,7 +475,7 @@
   justify-items: center;
 }
 
-.mushroom-specname  {
+.mushroom-specname {
   /* background-color: yellow; */
   font-size: small;
   font-style: italic;
@@ -489,7 +483,6 @@
   text-align: center;
   justify-content: center;
   justify-items: center;
-
 }
 
 .mushroom-name p {
@@ -530,7 +523,6 @@
   justify-items: center;
   align-items: center;
   margin: auto;
-
 }
 
 .mushroomsContainer-text {
@@ -701,12 +693,11 @@
   margin: auto;
   font-style: italic;
   font-size: 24px;
-
 }
 
-.mushroom-basic-info h1 {
+/* .mushroom-basic-info h1 {
   /* margin: auto; */
-}
+/* } */
 
 .mySlides {
   display: none;
@@ -732,7 +723,7 @@
   margin-bottom: 5%;
   width: 100%;
   padding: 10px;
-  margin: 2% 2% 0 0; 
+  margin: 2% 2% 0 0;
 }
 
 /* ABC */
@@ -762,7 +753,7 @@
   background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
-  margin: 10px 0px 0px 0px; 
+  margin: 10px 0px 0px 0px;
   width: 80%;
   max-width: 800px;
   justify-content: center;
@@ -807,7 +798,6 @@
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
-
 /* ABC1 */
 .abc1-container {
   display: flex;
@@ -819,7 +809,7 @@
 
 .abc1-container img {
   width: 80%;
-  max-width: 700px
+  max-width: 700px;
   /* margin: ; */
 }
 
@@ -849,7 +839,7 @@
   background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
-  margin: 10px 0px 0px 0px; 
+  margin: 10px 0px 0px 0px;
   width: 80%;
   max-width: 800px;
   justify-content: center;
@@ -899,10 +889,9 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-
 }
 
-.courses-element-img{
+.courses-element-img {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -914,7 +903,6 @@
   max-width: 600px;
   margin: 20px 0px 20px 0px;
 }
-
 
 /* RECIPES */
 #categoriesRecpiesContainer {
@@ -973,7 +961,7 @@
   background-color: var(--abc-element-color);
   border: solid 0px;
   border-radius: 15px;
-  margin: 10px 0px 0px 0px; 
+  margin: 10px 0px 0px 0px;
   width: 80%;
   max-width: 800px;
   justify-content: center;
@@ -983,7 +971,6 @@
   color: white;
   text-decoration: none;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-
 }
 
 .categories-element a:hover {
@@ -1206,3 +1193,170 @@
   color: #ff0000;
   margin-top: 5px;
 }
+
+/* ABC 1 staer*/
+
+#main-header-abc1 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#main-content-abc1 {
+  padding: 20px;
+}
+
+#main-footer-abc1 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.section-container-abc1 {
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #4caf50;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.photos-abc1 {
+  text-align: center;
+}
+
+.gallery-abc1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-image-abc1 {
+  margin: 10px;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+/* ABC 1 end */
+
+/* ABC 2 start */
+
+#main-header-abc2 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#main-content-abc2 {
+  padding: 20px;
+}
+
+#main-footer-abc2 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.section-container-abc2 {
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-title-abc2 {
+  color: #4caf50;
+}
+
+.section-text-abc2 {
+  margin-bottom: 20px;
+}
+
+.list-abc2 {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.list-item-abc2 {
+  margin-bottom: 10px;
+}
+
+.photos-abc2 {
+  text-align: center;
+}
+
+.gallery-abc2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-image-abc2 {
+  margin: 10px;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+/* ABC 2 end */
+
+/* ABC 3 start */
+
+#main-header-abc3 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#main-content-abc3 {
+  padding: 20px;
+}
+
+#main-footer-abc3 {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.section-container-abc3 {
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-title-abc3 {
+  color: #4caf50;
+}
+
+.section-text-abc3 {
+  margin-bottom: 20px;
+}
+
+.list-abc3 {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.list-item-abc3 {
+  margin-bottom: 10px;
+}
+
+.tip-image-abc3 {
+  display: block;
+  margin: 10px 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* ABC 3 end */
