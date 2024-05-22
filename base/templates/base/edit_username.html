@@ -1,7 +1,22 @@
 {% extends 'main.html' %} {% block content %}
-<h2>Edycja profilu</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Zapisz zmiany</button>
-</form>
+
+<div id="loginBody">
+  <div class="login-content">
+    <div class="welcome-text">
+      <h2>Zmień nazwę użytkownika</h2>
+      <a>Wprowadź swoją nową nazwę użytkownika.</a>
+    </div>
+
+    <hr class="separator-vertical-edit-username" />
+
+    <div class="login-form">
+      <div class="form-container">
+        <form method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit">Zapisz zmiany</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -1,7 +1,78 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<div>abc 3</div>
-<h1>Kiedy wychodzić na grzyby</h1>
-<img src="{% static 'images/hatchback.jpg' %}" alt="zdj do abc" />
-<span>cos tam cos tam</span>
+<div>
+  <header id="main-header-abc3" class="header-abc3">
+    <h1 id="main-title-abc3" class="title-abc3">
+      Jak Odróżnić Grzyby Jadalne od Trujących
+    </h1>
+  </header>
+
+  <main id="main-content-abc3" class="content-abc3">
+    <section class="intro-abc3" id="intro-section-abc3">
+      <div class="section-container-abc3" id="intro-container-abc3">
+        <h2 id="intro-title-abc3" class="section-title-abc3">Wprowadzenie</h2>
+        <p id="intro-text-abc3" class="section-text-abc3">
+          Zbieranie grzybów to popularne hobby, ale wymaga ono wiedzy na temat
+          tego, które grzyby są bezpieczne do spożycia, a które mogą być
+          niebezpieczne. W tym poradniku dowiesz się, jak rozróżniać grzyby
+          jadalne od trujących.
+        </p>
+      </div>
+    </section>
+
+    <section class="tips-abc3" id="tips-section-abc3">
+      <div class="section-container-abc3" id="tips-container-abc3">
+        <h2 id="tips-title-abc3" class="section-title-abc3">Wskazówki</h2>
+        <ul id="tips-list-abc3" class="list-abc3">
+          <li id="tip-1-abc3" class="list-item-abc3">
+            Zwróć uwagę na kolor kapelusza - jadalne grzyby często mają
+            jednolity kolor
+          </li>
+          <!-- Zdjęcie grzyba jadalnego z jednolitym kolorem kapelusza -->
+          <img
+            src="{% static 'images/kolor_kapelusza.jpg' %}"
+            alt="Grzyb jadalny z jednolitym kolorem kapelusza"
+            class="tip-image-abc3"
+            id="image-1-abc3"
+          />
+
+          <li id="tip-2-abc3" class="list-item-abc3">
+            Sprawdź blaszki - trujące grzyby mają blaszki o jaskrawych kolorach
+          </li>
+          <!-- Zdjęcie trującego grzyba z jaskrawymi blaszkami -->
+          <img
+            src="{% static 'images/blaszki.jpg' %}"
+            alt="Trujący grzyb z jaskrawymi blaszkami"
+            class="tip-image-abc3"
+            id="image-2-abc3"
+          />
+
+          <li id="tip-3-abc3" class="list-item-abc3">
+            Zwróć uwagę na zapach - jadalne grzyby mają przyjemny, ziemisty
+            zapach
+          </li>
+          <!-- Zdjęcie grzyba, który ma przyjemny zapach -->
+          <img
+            src="{% static 'images/zapach.jpg' %}"
+            alt="Grzyb o przyjemnym zapachu"
+            class="tip-image-abc3"
+            id="image-3-abc3"
+          />
+
+          <li id="tip-5-abc3" class="list-item-abc3">
+            Unikaj grzybów z czerwonawym zabarwieniem - wiele trujących grzybów
+            ma czerwone plamki
+          </li>
+          <!-- Zdjęcie grzyba z czerwonym zabarwieniem -->
+          <img
+            src="{% static 'images/muchomor.jpg' %}"
+            alt="Grzyb z czerwonym zabarwieniem"
+            class="tip-image-abc3"
+            id="image-5-abc3"
+          />
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
 {% endblock %}

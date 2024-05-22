@@ -1,15 +1,43 @@
 {% extends 'main.html' %} {% block content %}
 
-<div id="homeContainer">
+
+
+
+
+<div id="loginBody">
+  <div class="login-content">
+    <div class="welcome-text">
+      <h2>Wybierz zdjęcie</h2>
+      <a>Wybierz ze swojej galerii zdjęcie, które chcesz zidentyfikować.</a>
+    </div>
+
+    <hr class="separator-vertical home-separator-vertical"/>
+
+    <div class="home-form">
+      <div class="home-form">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="home-input" type="file" name="image" id="id_image" accept="image/*" />
+        <button class="classic-button" type="submit">Identyfikuj</button>
+      </form>
+    </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+<!-- <div id="home-container">
   <div class="upload-form">
     <h2>Załącz zdjęcie</h2>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <!-- <label for="id_image">Choose Image:</label> -->
       <input type="file" name="image" id="id_image" accept="image/*" />
       <button type="submit">Identyfikuj</button>
     </form>
   </div>
-</div>
+</div> -->
 
 {% endblock %} 

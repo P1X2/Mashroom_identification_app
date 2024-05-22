@@ -3,37 +3,88 @@
 
 
 <div class="mushroom-container">
-  <div class="mushroom-basic-info">
-    <h1 class="mushroom-name">{{ mushroom.name }}</h1>
-    <h2 class="scientific-name">{{ mushroom.specname }}</h2>
-    {% if mushroom.edible %}
+  <div class="single-mushroom-info">
+    <div class="single-mushroom-subinfo">
+        <h1 class="single-mushroom-name">{{mushroom.name}} </h1>
+        <h1 class="single-mushroom-specname">({{mushroom.specname}})</h1>
+    </div>
+    <div>
+      {% if mushroom.edible %}
+      <p class="edible">GRZYB JADALNY</p>
+      {% else %}
+      <p class="inedible">GRZYB NIEJADALNY</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="mushroom-content">
+
+  <div class="mushroom-content-middle">
+    <div class="mushroom-images">
+      <button class="w3-button mushroom-button" onclick="plusDivs(-1)">&#10094;</button>
+      <img class="mySlides" src="{{ mushroom.img1.url }}"/>
+      <img class="mySlides" src="{{ mushroom.img2.url }}"/>
+      <img class="mySlides" src="{{ mushroom.img3.url }}"/>
+      <img class="mySlides" src="img_forest.jpg"/>
+      <button class="w3-button mushroom-button" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+    </script>
+  </div>
+
+  <div class="mushroom-content-bottom">
+    <div class="mushroom-content-characteristics">
+      <h3>Charakterystyczne cechy:</h3>
+      <div class="mushroom-characteristics">
+        {% for a, z in mushroom.characteristics.items %}
+        <p>
+          {{ z }}
+        </p>
+        {% endfor %}  
+      </div>
+    </div>
+    <div class="mushroom-content-description">
+      <h3>Dokładniejszy opis grzyba:</h3>
+      <p>{{mushroom.description}}</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <!-- <div class="mushroom-basic-info"> -->
+    <!-- <h1 class="mushroom-name">{{ mushroom.name }}</h1>
+    <h2 class="scientific-name">{{ mushroom.specname }}</h2> -->
+    <!-- {% if mushroom.edible %}
     <p class="edible">GRZYB JADALNY</p>
     {% else %}
     <p class="inedible">GRZYB NIEJADALNY</p>
     {% endif %}
-  </div>
+  </div> -->
 
-  <div class="w3-content w3-display-container">
+  <!-- <div class="w3-content w3-display-container">
     <img class="mySlides" src="{{ mushroom.img1.url }}">
     <img class="mySlides" src="{{ mushroom.img2.url }}">
-    <img class="mySlides" src="{{ mushroom.img3.url }}">
+    <img class="mySlides" src="{{ mushroom.img3.url }}"> -->
     <!-- <img class="mySlides" src="img_forest.jpg"> -->
-
+<!-- 
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-  </div>
+  </div> -->
 
-<script>
+<!-- <script>
   var slideIndex = 1;
   showDivs(slideIndex);
-</script>
+</script> -->
 
 <!-- <div class="images-container">
     <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
     <img class="db_mushroom_photo" src="{{ mushroom.img2.url }}" />
     <img class="db_mushroom_photo" src="{{ mushroom.img3.url }}" />
   </div>  -->
-  <div class="mushroom-characteristics">
+  <!-- <div class="mushroom-characteristics">
     <h3>Charakterystyczne cechy:</h3>
     <ul>
       {% for a, z in mushroom.characteristics.items %}
@@ -45,5 +96,5 @@
     <h3>Dokładniejszy opis grzyba:</h3>
     <p>{{mushroom.description}}</p>
   </div>
-</div>
+</div> -->
 {% endblock %}

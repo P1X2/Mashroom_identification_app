@@ -24,66 +24,43 @@ function previousImage() {
   imageElement.src = images[currentImageIndex];
 }
 
-function changeTabLeft(selector_side, icon_id) {
-  var tab_right = document.querySelector(".dropdown-content-right");
-  if (tab_right.style.display != "none") {
-    changeTabRight(".dropdown-content-right", "fa-user");
-  }
-  clickTabLeft(selector_side, icon_id);
+function checkWidth() {
+  const elemWidth = document.querySelector(".navbar-tab").offsetWidth;
+  alert("Width of the div: " + elemWidth + " pixels");
 }
 
+function marginChange() {
+  var tab = document.querySelector(".navbar-tab");
+  var navbar = document.querySelector(".navbar-content");
+  const elemWidth = tab.offsetWidth;
 
-function changeTabRight(selector_side, icon_id) {
-  var tab_left = document.querySelector(".dropdown-content-left");
-  if (tab_left.style.display != "none") {
-    clickTabLeft(".dropdown-content-left", "fa-bars");
+  if (tab.style.display === "flex") {
+    navbar.style.marginLeft = elemWidth+'px';
   }
-  clickTabRight(selector_side, icon_id);
-}
-
-function clickTabRight(selector_side, icon_id) {
-  var tab = document.querySelector(selector_side);
-  var icon = document.getElementById("userIcon");
-  var navbar = document.getElementById("navbarContainer");
-  var button = document.querySelector(".dropdown-right .dropbtn");
-  
-  if (tab.style.display === "none") {
-    navbar.style.width = "50%";
-    tab.style.display = "flex";
-    icon.classList.remove(icon_id);
-    icon.classList.add('fa-times');
-    button.style.backgroundColor = "var(--tab-color)";
-  } else {
-    navbar.style.width = "100%";
-    tab.style.display = "none";
-    icon.classList.remove("fa-times");
-    icon.classList.add(icon_id);
-    button.style.backgroundColor = "var(--primary-color)";
+  else {
+    navbar.style.marginLeft = '0px';
   }
 }
 
-function clickTabLeft(selector_side, icon_id) {
-  var tab = document.querySelector(selector_side);
+function changeTab() {
+  var tab = document.querySelector(".navbar-tab");
   var icon = document.getElementById("menuIcon");
-  var navbar = document.getElementById("navbarContainer");
-  var button = document.querySelector(".dropdown-left .dropbtn");
+
   if (tab.style.display === "none") {
-    navbar.style.width = "50%";
-    navbar.style.marginLeft = "50%";
     tab.style.display = "flex";
-    icon.classList.remove(icon_id);
+    icon.classList.remove("fa-bars");
     icon.classList.add('fa-times');
-    button.style.backgroundColor = "var(--tab-color)";
-    // button.hovered.
-  } else {
-    navbar.style.width = "100%";
-    navbar.style.marginLeft = "0%";
+  } 
+  
+  else {
     tab.style.display = "none";
     icon.classList.remove("fa-times");
-    icon.classList.add(icon_id);
-    button.style.backgroundColor = "var(--primary-color)";
+    icon.classList.add("fa-bars");
   }
+  marginChange();
 }
+
+
 
 function plusDivs(n) {
   showDivs(slideIndex += n);

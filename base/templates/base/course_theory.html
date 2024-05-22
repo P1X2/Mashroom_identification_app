@@ -13,9 +13,12 @@
     </div>
     {% endif %} 
     {% endfor %}
+    {% if user.is_authenticated %}
+    <div class="course-check">
+      <a href="{% url 'course_test' course.id %}">Sprawdź się</a>
+    </div>
+  
   </div>
 
-  {% if user.is_authenticated %}
-  <div><a href="{% url 'course_test' course.id %}">Sprawdź się</a></div>
 </div>
   {% endif %} {% endblock %}

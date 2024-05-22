@@ -1,22 +1,30 @@
 {% extends 'main.html' %} {% block content %}
 
-<h1>All Questions</h1>
-<form method="post">
-  {% csrf_token %} {% for question in questions %}
-  <h2>{{ question.text }}</h2>
-  {% if question.image %}
-  <img src="{{ question.image.url }}" alt="Question Image" />
-  {% endif %}
-  <ul>
-    {% for answer in question.answer_set.all %}
-    <li>
-      <input type="radio" name="user_answers" value="{{ answer.id }}" />
-      {{ answer.text }}
-    </li>
-    {% endfor %}
-  </ul>
-  {% endfor %}
-  <button type="submit">Submit Answers</button>
-</form>
+<!-- <h1>All Questions</h1> -->
+<div class="course-test-container">
+  <form method="post">
+
+    {% csrf_token %} {% for question in questions %}
+    <div class="course-test-content">
+      <h2>{{ question.text }}</h2>
+      {% if question.image %}
+      <img src="{{ question.image.url }}" alt="Question Image" />
+      {% endif %}
+      <ul>
+        {% for answer in question.answer_set.all %}
+        <li>
+          <input type="radio" name="user_answers" value="{{ answer.id }}" />
+          {{ answer.text }}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+      <button type="submit">Submit Answers</button>
+  
+    </div>
+  
+  </form>
+  
+</div>
 
 {% endblock %}

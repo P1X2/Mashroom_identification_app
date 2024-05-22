@@ -1,0 +1,1208 @@
+:root {
+  /* --primary-color: #467c3b;
+  --secondary-color: #135e29;
+  --third-color: #105023;
+  --fourth-color: #d7dfd1;
+  --background-color: #edf3e8;
+  --login-color: rgb(255, 255, 255); */
+  --primary-color: white;
+  --secondary-color: #04db33ab;
+  --third-color: #f3f0f0;
+  --fourth-color: #d7dfd1;
+  --background-color: #dddfdc;
+  --login-color: rgb(255, 255, 255);
+  --courses-color: rgb(255, 255, 255);
+  --courses-element-color: rgb(211, 123, 72);
+  --abc-element-color: #04db32;
+  --mushrooms-element-color: rgb(243, 199, 1);
+
+  --tab-color: #011d46;
+  --tab-hover-color: #032a57;
+
+
+}
+
+.white {
+  color: white;
+}
+
+#mainBody {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+}
+
+#loginBody {
+  display: flex;
+  background-color: var(--login-color);
+  width: inherit;
+  height: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  justify-items: center;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: 5%;
+  height: 60%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-text {
+  margin-bottom: 20px;
+  padding: 20px;
+  max-width: 550px;
+}
+
+.separator-vertical {
+  width: 0px;
+  background-color: black;
+  height: 0px;
+  margin: 0 20px;
+}
+
+.register-text {
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.register-text a {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.register-text a:hover {
+  color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 600px) {
+  .login-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .login-form {
+    margin-left: 20px;
+  }
+
+  .separator-vertical {
+    width: 1px;
+    height: 330px;
+  }
+
+  .separator-vertical-register {
+    width: 1px;
+    height: 660px;
+    background-color: black;
+    margin: 0 20px;
+  }
+}
+
+/* login and register form */
+.form-container {
+  height: auto;
+  width: 300px;
+  margin-right: 5%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 25px;
+  border-radius: 10px;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+  align-items: center;
+}
+
+/* Styl dla etykiet */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--login-color);
+}
+
+/* Styl dla przycisków */
+.form-container button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styl dla przycisków po najechaniu myszą */
+.form-container button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* NAVBAR */
+#navbarContainer {
+  display: flex;
+  width: 100%;
+  background-color: var(--primary-color);
+  min-height: 50px;
+}
+
+.dropbtn {
+  background-color: var(--primary-color);
+  border: none;
+  border: solid 0px;
+  border-radius: 40px;
+  padding: 0px 20px 0px 20px;
+}
+
+/* .dropbtn:hover {
+  background-color: var(--secondary-color);
+} */
+
+.dropdown-left {
+  display: flex;
+  width: 100%;
+  height: 50px;
+}
+
+.dropdown-right {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  height: 50px;
+}
+
+.dropdown-content-left {
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  /* position: static; */
+  background-color: var(--tab-color);
+  min-height: 100vh;
+  width: 50%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-right: solid 0px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content-left a{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+
+.dropdown-content-left a:hover {
+  background-color: var(--tab-hover-color);
+  width: 100%;
+}
+
+
+.dropdown-content-right {
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  /* position: static; */
+  background-color: var(--tab-color);
+  min-height: 100vh;
+  width: 50%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-right: solid 0px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  margin: 0;
+  margin-left: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.nav {
+  display: flex;
+}
+
+.dropdown-content-right a{
+  display: flex;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+
+.dropdown-content-right a:hover {
+  background-color: var(--tab-hover-color);
+  width: 100%;
+}
+
+.logout-icon {
+  padding-left: 10px;
+}
+
+.icon-padding {
+  padding-left: 10px;
+}
+
+
+/* HOME */
+#homeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* grid-gap: 10px; */
+  /* grid-template-rows: 1fr 1fr; */
+  margin-top: 5%;
+}
+
+.upload-form {
+  display: block;
+  width: 380px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  /* height: 100vh; */
+}
+
+@media screen and (max-width: 480px) {
+  .upload-form {
+    width: 300px;
+  }
+}
+
+.upload-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-form input[type="file"] {
+  display: block;
+  padding: 10px;
+  width: calc(100% - 20px);
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.upload-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--abc-element-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upload-form button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* MUSHROOMS */
+.mushroomsContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.mushrooms-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mushrooms-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--abc-element-color);
+  height: 15%;
+}
+
+.mushrooms-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+.mushrooms-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.mushrooms-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.mushrooms-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mushrooms-searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  /* background-color: #0056b3; */
+}
+
+.mushrooms-searchbar input {
+  display: flex;
+  /* width: 100%; */
+  margin: auto;
+  align-items: center;
+  /* margin-bottom: 15px; */
+  border: solid 0.5px;
+  border-radius: 10px;
+  min-height: 30px;
+  min-width: 250px;
+  padding: 0px 10px 0px 10px;
+  border: solid 0.5px;
+  border-color: #aaa8a8;
+}
+
+.mushroom-photo {
+  /* width: 40%; */
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  /* background-color: #0056b3; */
+  width: 40%;
+  max-width: 100%;
+  height: auto;
+  /* border: solid 0.5px; */
+  border-radius: 15px;
+  /* border-color: rgb(104, 104, 104); */
+
+}
+
+.mushroom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  /* background-color:violet; */
+  margin: 0px;
+  padding: 0px;
+  width: 70%;
+  height: 100%;
+}
+
+.mushroom-name  {
+  font-size: 15px;
+  /* background-color: #007bff; */
+  margin: 0px;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.mushroom-specname  {
+  /* background-color: yellow; */
+  font-size: small;
+  font-style: italic;
+  margin: 0px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.mushroom-name p {
+  font-size: small;
+}
+
+.welcome-text {
+  display: flex;
+  width: 100%;
+  /* background-color: yellow; */
+  margin: 0;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  /* padding: 10px 0px 10px 0px; */
+  /* min-height: 50%; */
+  padding: 0px;
+  height: 10vh;
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #007bff; */
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.welcome-text h2 {
+  font-size: medium;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+
+}
+
+.mushroomsContainer-text {
+  display: block;
+  justify-items: center;
+}
+
+.mushroomsContainer-text h2 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 15px;
+}
+
+.mushroomsContainer-text input {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  margin-bottom: 15px;
+  border: solid 0.5px;
+  border-radius: 10px;
+  min-height: 20px;
+  padding: 8px;
+}
+
+.mushroom_photo {
+  width: 30%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.mushroom_list {
+  margin-top: 35px;
+}
+
+#mushroom_list_holder a {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 7px;
+  text-decoration: none;
+  border: solid 0px;
+  /* border-color: var(--primary-color); */
+  border-radius: 15px;
+  background-color: var(--mushrooms-element-color);
+  /* min-width: 300px; */
+  max-width: 850px;
+}
+
+/* @media only screen and (min-width: 600px) {
+  #mushroom_list_holder a {
+    max-width: 70%;
+  }
+} */
+
+#mushroom_list_holder a:hover {
+  background-color: var(--secondary-color);
+}
+
+.mushroom_list_holder_info {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 300px; */
+  justify-content: center;
+  justify-items: center;
+  /* padding: 20px; */
+  margin: auto;
+  margin-left: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+.mushroom_specname span {
+  font-style: italic;
+  color: white;
+}
+
+.mushroom_name span {
+  color: white;
+}
+
+.mushroom_name p {
+  color: white;
+}
+
+#list_searchbar_holder {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+#list_searchbar_holder form {
+  display: flex;
+  width: 25%;
+  min-width: 410px;
+  /* width: 100%; */
+  /* background-color: #4caf50; */
+}
+
+/* MUSHROOM */
+.mushroom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+  padding: 5%;
+  background-color: var(--background-color);
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  /* background-color: #ffffff; */
+  width: 100%;
+  /* max-width: 700px; */
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* padding: 5px; */
+}
+
+.images-container img {
+  width: 47%;
+  margin: 2px;
+  border: solid 1px;
+  border-radius: 15px;
+  border-color: var(--background-color);
+}
+
+@media screen and (max-width: 650px) {
+  .images-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .images-container img {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+}
+
+.mushroom-basic-info {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+  flex-direction: column;
+  background-color: var(--fourth-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin-bottom: 2%;
+  width: 100%;
+  align-items: center;
+}
+
+.mushroom-basic-info h2 {
+  margin: auto;
+  font-style: italic;
+  font-size: 24px;
+
+}
+
+.mushroom-basic-info h1 {
+  /* margin: auto; */
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  margin: auto;
+}
+
+.mushroom-description {
+  background-color: #61a4ec;
+  border: solid 0px;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  width: 100%;
+  padding: 10px;
+  margin: 2% 2% 0 0;
+  /* margin-bottom: 10px; */
+}
+
+.mushroom-characteristics {
+  background-color: #6486aa;
+  border: solid 0px;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  width: 100%;
+  padding: 10px;
+  margin: 2% 2% 0 0; 
+}
+
+/* ABC */
+#abcContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.abc-element {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.abc-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.abc-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+.abc-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.abc-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.abc-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ABC1 */
+.abc1-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #a0ccad;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.abc1-container img {
+  width: 80%;
+  max-width: 700px
+  /* margin: ; */
+}
+
+/* COURSES */
+#coursesContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.courses-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.courses-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.courses-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+.courses-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.courses-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.courses-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.courses-element-text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+}
+
+.courses-element-img{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.courses-element-img img {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px 0px 20px 0px;
+}
+
+
+/* RECIPES */
+#categoriesRecpiesContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.categories-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-bottom: solid 0px;
+}
+
+.categories-info h2 {
+  color: white;
+  font-size: larger;
+}
+
+.categories-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--third-color);
+  margin: 10px 0px 0px 0px;
+  min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.categories-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+.categories-element a {
+  display: flex;
+  background-color: var(--abc-element-color);
+  border: solid 0px;
+  border-radius: 15px;
+  margin: 10px 0px 0px 0px; 
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.categories-element a:hover {
+  background-color: var(--secondary-color);
+}
+
+.recipes-separator {
+  width: 1px;
+  height: 50px;
+  background-color: #000000;
+  margin: 0px 10px 0px 10px;
+  border: solid 0.5px;
+  border-color: #000000;
+}
+
+.recipes-element {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  background-color: #ce8619;
+  border: solid 0px;
+  border-radius: 15px;
+  height: 70px;
+}
+
+.recipes-element a {
+  display: flex;
+  border: solid 0px;
+  border-radius: 15px;
+  width: 60%;
+  max-width: 800px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.recipes-element span {
+  padding: 8px;
+}
+
+.recipes-element:hover {
+  background-color: var(--secondary-color);
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  align-items: center;
+}
+
+.recipe-content-text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.recipe-content-text span {
+  font-weight: bold;
+}
+
+.recipe-content-img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  max-width: 600px;
+  margin: 15px 0px 25px 0px;
+}
+
+.recipe-content-img img {
+  width: 80%;
+}
+
+/* CLASSIFICATION PAGE */
+.container {
+  flex: 1;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.uploaded-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.result {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.percentage {
+  font-size: 38px;
+  color: #5cb85c;
+}
+
+.edible {
+  font-size: 20px;
+  color: #27a727;
+}
+
+.inedible {
+  font-size: 20px;
+  color: #f10606;
+}
+
+/* .mushroom-name {
+  font-size: 24px;
+  margin-top: 10px;
+} */
+
+.additional-images {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.additional-images img {
+  max-width: 200px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* SLIDER START --> (COMPARE) */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* SLIDER END */
+
+/* change password */
+/* Stylizacja formularza */
+.custom-password-change-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Stylizacja etykiet pól formularza */
+.custom-password-change-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Stylizacja pól formularza */
+.custom-password-change-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Stylizacja przycisku formularza */
+.custom-password-change-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Stylizacja przycisku formularza po najechaniu */
+.custom-password-change-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Stylizacja komunikatów o błędach */
+.custom-password-change-form .error-message {
+  color: #ff0000;
+  margin-top: 5px;
+}

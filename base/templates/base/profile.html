@@ -1,7 +1,7 @@
 {% extends 'main.html' %} {% block content %}
 <!-- Treść dostępna tylko dla zalogowanych użytkowników -->
 
-<div class="abcContainer">
+<!-- <div class="abcContainer">
     <div class="abc-info">
         <h2>Mój profil</h2>
     </div>
@@ -17,7 +17,20 @@
         </div>
     </div>
 
+</div> -->
+
+<div class="profile-container">
+    <h2>Mój profil</h2>
+    <div class="profile-content">
+        <h2>@{{ user.username }}</h2>
+        <p>Poziom: {{ profile.level }}</p>
+        <progress value="{{ profile.points }}" max="100"></progress>
+        <p>{{ profile.points }}/100</p>
+    </div>
+    <div class="abc-element">
+        <a href="{% url 'edit_username' %}">Zmień Nazwę użytkownika</a>
+        <a href="{% url 'edit_password' %}">Zmień hasło</a>            
+    </div>
+
 </div>
-
-
 {% endblock %}
