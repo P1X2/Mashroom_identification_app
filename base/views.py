@@ -86,13 +86,14 @@ def home(request):
             data_uri = pil_to_data_uri(img)
 
             if is_mushrooom:
-                # dodanie punktó użytkownikowi za znalezienie grzyba
-                profile = Profile.objects.get(user=request.user)
-                profile.points += math.ceil(5 / profile.level)
-                if profile.points >= 100:
-                    profile.points = profile.points - 100
-                    profile.level += 1
-                profile.save()
+                if request.user.is_authenticated:
+                    # dodanie punktó użytkownikowi za znalezienie grzyba
+                    profile = Profile.objects.get(user=request.user)
+                    profile.points += math.ceil(5 / profile.level)
+                    if profile.points >= 100:
+                        profile.points = profile.points - 100
+                        profile.level += 1
+                    profile.save()
 
                 request.session['uploaded_image'] = data_uri
                 # classification with NN here

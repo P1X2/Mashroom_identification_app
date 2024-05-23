@@ -44,7 +44,7 @@ def is_mushroom_classify_img_2(image):
         # Pobierz bieżącą ścieżkę
     current_path = os.getcwd()
     # Dołącz ścieżkę do pliku
-    file_path = os.path.join(current_path, 'base\\ai_models\\5_epch_googleNet_BINARY_V2_128X128.pt')
+    file_path = os.path.join(current_path, 'base', 'ai_models', 'model_epoch9.pt')
     model_is_mushroom = RestGoogleNet_Clasificator(3)
     model_is_mushroom.load_state_dict(torch.load(file_path))
     classes = ["grzyb", 'NIE grzyb']
