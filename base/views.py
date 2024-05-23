@@ -99,6 +99,7 @@ def home(request):
                 # classification with NN here
                 result_id, pred_prob = 0, 88
                 mushroom = Mushroom.objects.get(nn_id=result_id)
+                predict_species(img)
                 return render(request, 'base/classification.html', {'image': data_uri, 'mushroom': mushroom, 'probability': pred_prob})
             else:
                 return render(request, 'base/no_mushroom.html', {})

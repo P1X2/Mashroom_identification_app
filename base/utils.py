@@ -4,6 +4,7 @@ import torch
 from torchvision import transforms
 from .ai import *
 import os
+import pickle
 
 def process_image(image):
     # Process the image using PIL
@@ -45,7 +46,7 @@ def is_mushroom_classify_img_2(image):
     current_path = os.getcwd()
     # Dołącz ścieżkę do pliku
     file_path = os.path.join(current_path, 'base', 'ai_models', 'model_epoch9.pt')
-    model_is_mushroom = RestGoogleNet_Clasificator(3)
+    model_is_mushroom = RestGoogleNet_Clasificator_biniary(3)
     model_is_mushroom.load_state_dict(torch.load(file_path))
     classes = ["grzyb", 'NIE grzyb']
     # Przetwarzanie obrazu
@@ -74,3 +75,34 @@ def is_mushroom_classify_img_2(image):
         return True
     else:
         return False
+
+
+
+def predict_species(image):
+    current_path = os.getcwd()
+    dice_file_path = os.path.join(current_path, 'base', 'ai_models', 'species_dict.pkl')
+    with open(dice_file_path, 'rb') as file:
+        species_dict = pickle.load(file)
+    softmax = nn.Softmax()
+    transform_raw_2 = transforms.Compose([
+        transforms.Resize([256, 256]),
+        transforms.ToTensor(),
+        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])]
+    )
+    image = transform_raw_2(image)
+
+    file_path = os.path.join(current_path, 'base', 'ai_models', '59_model_Species.pt')
+    num_classes = 17
+    model = RestGoogleNet_Clasificator_species(in_channels=3, num_classes=num_classes)
+    model.load_state_dict(torch.load(file_path))
+
+    pred = model(image)
+    pred = softmax(pred)
+    class_idx = torch.argmax(pred, dim=1)
+
+    predicted_species = [key for key, value in species_dict.items() if value == class_idx]
+    probability = pred[class_idx]
+
+    print("predykcja grzyba")
+    print(predict_species, probability)
+    return predicted_species, probability

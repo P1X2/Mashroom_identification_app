@@ -226,7 +226,7 @@ class ImageClassifierNetwork(nn.Module):
 
         return accuracy.item()
 
-class RestGoogleNet_Clasificator(ImageClassifierNetwork):
+class RestGoogleNet_Clasificator_biniary(ImageClassifierNetwork):
     """
     Input - in_channels x 96x96
     """
@@ -285,3 +285,65 @@ class RestGoogleNet_Clasificator(ImageClassifierNetwork):
         return x
 
 
+
+
+class RestGoogleNet_Clasificator_species(ImageClassifierNetwork):
+    """
+    Input - in_channels x 96x96
+    """
+    def __init__(self, in_channels, num_classes):
+        super().__init__()
+
+        self.Conv1 = nn.Conv2d(in_channels, out_channels=32, kernel_size=5, stride=1, padding=2)
+        self.Conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5, stride=1, padding=2)
+
+        self.Intercepton1 = RestPercepton_block(in_channels=64, out_channels=168, conv_size_in=[32,32], conv_size_out=[24, 64, 64],change_depth_pool=16)
+        self.Intercepton2 = RestPercepton_block(in_channels=168, out_channels=318, conv_size_in=[72,72], conv_size_out=[60, 118, 108],change_depth_pool= 32)
+        self.Intercepton3 = RestPercepton_block(in_channels=318, out_channels=414, conv_size_in=[128,96], conv_size_out=[78, 154, 134],change_depth_pool=48)
+        self.Intercepton4 = RestPercepton_block(in_channels=414, out_channels=540, conv_size_in=[140,124], conv_size_out=[112, 190, 174],change_depth_pool=64)
+        self.Intercepton5 = RestPercepton_block(in_channels=540, out_channels=712, conv_size_in=[192,150], conv_size_out=[152, 256, 224],change_depth_pool=80)
+
+        self.MaxPool_2x2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.AvgPool_4x4 = nn.AvgPool2d(kernel_size=4, stride=1)
+
+        self.Dropout = nn.Dropout(0.5)
+        self.Linear = nn.Linear(712, num_classes)
+
+
+        self.BN1 = nn.BatchNorm2d(32)
+        self.BN2 = nn.BatchNorm2d(64)
+
+        self.activation = nn.ReLU()
+
+
+    def forward(self, x):
+
+        x = self.Conv1(x)
+        x = self.BN1(x)
+        x = self.activation(x)
+        x = self.MaxPool_2x2(x) # 128x128
+
+        x = self.Conv2(x)
+        x = self.BN2(x)
+        x = self.activation(x)
+        x = self.MaxPool_2x2(x) # 64x64
+
+        x = self.Intercepton1(x)
+        x = self.MaxPool_2x2(x) # 32x32
+
+        x = self.Intercepton2(x)
+        x = self.MaxPool_2x2(x) # 16x16
+        x = self.Intercepton3(x)
+        x = self.MaxPool_2x2(x) # 8x8
+
+        x = self.Intercepton4(x)
+        x = self.MaxPool_2x2(x) # 4x4
+        x = self.Intercepton5(x)
+        x = self.AvgPool_4x4(x)
+
+        x = x.view(x.size(0), -1)
+
+        x = self.Dropout(x)
+        x = self.Linear(x)
+
+        return x
