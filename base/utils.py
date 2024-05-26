@@ -83,7 +83,7 @@ def get_pred(image_tensor, model, species_dict, device):
     with torch.no_grad():
         image_tensor = image_tensor.to(device)
         softmax = nn.Softmax()
-
+        model.eval()
         pred = model(image_tensor)
         pred = softmax(pred)
         class_idx = torch.argmax(pred, dim=1).item()
