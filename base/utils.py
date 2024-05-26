@@ -77,38 +77,6 @@ def is_mushroom_classify_img_2(image):
     else:
         return False
 
-
-# not used
-def predict_species(image):
-    current_path = os.getcwd()
-    dice_file_path = os.path.join(current_path, 'base', 'ai_models', 'species_dict.pkl')
-    with open(dice_file_path, 'rb') as file:
-        species_dict = pickle.load(file)
-    softmax = nn.Softmax()
-    transform_raw_2 = transforms.Compose([
-        transforms.Resize([256, 256]),
-        transforms.ToTensor(),
-        transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])]
-    )
-    image = transform_raw_2(image)
-
-    file_path = os.path.join(current_path, 'base', 'ai_models', '59_model_Species.pt')
-    num_classes = 17
-    model = RestGoogleNet_Clasificator_species(in_channels=3, num_classes=num_classes)
-    model.load_state_dict(torch.load(file_path))
-
-    pred = model(image)
-    pred = softmax(pred)
-    class_idx = torch.argmax(pred, dim=1)
-
-    predicted_species = [key for key, value in species_dict.items() if value == class_idx]
-    probability = pred[class_idx]
-
-    print("predykcja grzyba")
-    print(predict_species, probability)
-    return predicted_species, probability
-
-
 # new classification functions 26.05
 
 def get_pred(image_tensor, model, species_dict, device):
