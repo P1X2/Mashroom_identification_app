@@ -75,6 +75,11 @@ def user_logout(request):
 
 # Create your views here.
 def home(request):
+    current_path = os.getcwd()
+    file_path = os.path.join(current_path, 'base', 'ai_models', 'e59_model_Species.pt')
+    num_classes = 17
+    classification_model = RestGoogleNet_Clasificator(in_channels=3, num_classes=num_classes)
+    classification_model.load_state_dict(torch.load(file_path))
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -97,9 +102,9 @@ def home(request):
 
                 request.session['uploaded_image'] = data_uri
                 # classification with NN here
-                result_id, pred_prob = 0, 88
-                mushroom = Mushroom.objects.get(nn_id=result_id)
-                predict_species(img)
+                idx, spec, pred_prob = get_species_prob(img, classification_model)
+                mushroom = Mushroom.objects.get(nn_id=idx)
+
                 return render(request, 'base/classification.html', {'image': data_uri, 'mushroom': mushroom, 'probability': pred_prob})
             else:
                 return render(request, 'base/no_mushroom.html', {})
