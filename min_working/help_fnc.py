@@ -5,6 +5,7 @@ from PIL import Image
 
 def get_pred(image_tensor, model, species_dict, device):
     with torch.no_grad():
+        model.eval()
         image_tensor = image_tensor.to(device)
         softmax = nn.Softmax()
 
@@ -15,7 +16,7 @@ def get_pred(image_tensor, model, species_dict, device):
         predicted_species = [key for key, value in species_dict.items() if value == class_idx][0]
         probability = pred[0, class_idx].item()
 
-        return predicted_species, (probability*100) + 40 # jak drugi model tez bedzie zajebiscie dzialal, to mozna podkrecic troche
+        return predicted_species, (probability*100) # jak drugi model tez bedzie zajebiscie dzialal, to mozna podkrecic troche
 
 
 
