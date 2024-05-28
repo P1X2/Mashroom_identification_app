@@ -79,7 +79,7 @@ def home(request):
     file_path = os.path.join(current_path, 'base', 'ai_models', 'e59_model_Species.pt')
     num_classes = 17
     classification_model = RestGoogleNet_Clasificator(in_channels=3, num_classes=num_classes)
-    classification_model.load_state_dict(torch.load(file_path))
+    classification_model.load_state_dict(torch.load(file_path, map_location=torch.device('cpu')))
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():

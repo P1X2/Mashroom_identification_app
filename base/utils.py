@@ -48,7 +48,7 @@ def is_mushroom_classify_img_2(image):
     # Dołącz ścieżkę do pliku
     file_path = os.path.join(current_path, 'base', 'ai_models', 'model_epoch9.pt')
     model_is_mushroom = RestGoogleNet_Clasificator_biniary(3)
-    model_is_mushroom.load_state_dict(torch.load(file_path))
+    model_is_mushroom.load_state_dict(torch.load(file_path, map_location=torch.device('cpu')))
     classes = ["grzyb", 'NIE grzyb']
     # Przetwarzanie obrazu
     transform_raw_1 = transforms.Compose([
