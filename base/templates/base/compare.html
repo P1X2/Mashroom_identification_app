@@ -1,18 +1,30 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
 
-<div class="uploaded-image">
-  <img src="{{ user_image }}" alt="Uploaded Image" />
-</div>
 
-<div class="slider">
-  <div class="slides">
-    <img src="{{ mushroom.img1.url }}" />
-    <img src="{{ mushroom.img2.url }}" />
-    <img src="{{ mushroom.img3.url }}" />
+
+<div class="compare-container">
+  <div class="uploaded-image">
+    <img src="{{ user_image }}" alt="Uploaded Image" />
   </div>
-  <button class="prev" onclick="prevSlide()">&#10094;</button>
-  <button class="next" onclick="nextSlide()">&#10095;</button>
-</div>
-<script src="{% static 'scripts/slider.js' %}"></script>
+  
+
+  <div class="uploaded-image">
+    <div class="slider">
+      <div class="slides uploaded-image">
+        <img src="{{ mushroom.img1.url }}" />
+        <img src="{{ mushroom.img2.url }}" />
+        <img src="{{ mushroom.img3.url }}" />
+      </div>
+      <div class="compare-buttons">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+    <script src="{% static 'scripts/slider.js' %}"></script>  
+  </div>
+  
+  </div>
+ 
 
 {% endblock %}
+
