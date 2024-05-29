@@ -24,7 +24,7 @@ model.load_state_dict(torch.load('models_SPECIES\e59_model_Species.pt'))
 
 #####################################################
 
-img_tensor = preprocess_image("grzybki\grzybek2.jpg", transform_raw_2)
+img_tensor = preprocess_image("grzybki\grzybek5.jpg", transform_raw_2)
 species, prob = get_pred(image_tensor=img_tensor,model=model, species_dict=species_dict, device=device )
 
 print(species)
