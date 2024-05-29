@@ -91,7 +91,7 @@ def get_pred(image_tensor, model, species_dict, device):
         predicted_species = [key for key, value in species_dict.items() if value == class_idx][0]
         probability = pred[0, class_idx].item()
         print(f"idx:::: {class_idx}")
-        return class_idx, predicted_species, (probability*100) + 40 # jak drugi model tez bedzie zajebiscie dzialal, to mozna podkrecic troche
+        return class_idx, predicted_species, (probability*100) # jak drugi model tez bedzie zajebiscie dzialal, to mozna podkrecic troche
 
 
 
