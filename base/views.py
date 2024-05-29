@@ -14,6 +14,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import ChangeUsernameForm, CustomPasswordChangeForm
+import math
 
 def edit_username(request):
     if request.method == 'POST':
@@ -105,7 +106,7 @@ def home(request):
                 idx, spec, pred_prob = get_species_prob(img, classification_model)
                 mushroom = Mushroom.objects.get(nn_id=idx)
 
-                return render(request, 'base/classification.html', {'image': data_uri, 'mushroom': mushroom, 'probability': pred_prob})
+                return render(request, 'base/classification.html', {'image': data_uri, 'mushroom': mushroom, 'probability': math.floor(pred_prob)})
             else:
                 return render(request, 'base/no_mushroom.html', {})
     else:

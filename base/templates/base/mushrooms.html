@@ -24,6 +24,13 @@
           <div class="mushroom-specname">
             {{mushroom.specname}}
           </div>
+          <div>
+            {% if mushroom.edible %}
+            <p class="edible">GRZYB JADALNY</p>
+            {% else %}
+            <p class="inedible">GRZYB NIEJADALNY</p>
+            {% endif %}
+          </div>
           <!-- <div class="mushroom-name">
             <p>{{mushroom.description}}</p>
           </div> -->

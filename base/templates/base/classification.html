@@ -5,15 +5,15 @@
   <div class="id-container-left">
       <img class="id-upload-img" src="{{ image }}" alt="Uploaded Image" />
   </div>
-  
+
   <div class="id-container-right">
     <div class="id-container-right-content">
       <h2>Wynik identyfikacji:</h2>
 
       <div class="id-result">
         <p class="percentage id-result-percentage">
-          <!-- {{ probability }}% -->
-        98%</p>
+          {{ probability }}%
+        </p>
         <div class="id-result-info">
           {% if mushroom.edible %}
           <p class="edible">GRZYB JADALNY</p>
@@ -22,10 +22,10 @@
           {% endif %}
           <a class="mushroom-link" href="{% url 'mushroom' mushroom.id %}" class="mushroom-name">{{ mushroom.name }}</a>
         </div>
-  
+
     </div>
     </div>
-    
+
 
     <h2>Przeglądaj</h2>
 
@@ -38,7 +38,7 @@
         <img class="mySlides" src="img_forest.jpg"/>
         <button class="w3-button mushroom-button" onclick="plusDivs(1)">&#10095;</button>
       </div>
-  
+
       <script>
         var slideIndex = 1;
         showDivs(slideIndex);
@@ -75,7 +75,7 @@
 
 
 
-<!-- 
+<!--
 
 <div class="id-container">
   <div class="id-container-img">
@@ -88,7 +88,7 @@
         <h2>Wynik identyfikacji:</h2>
 
         <div class="id-result">
-  
+
           <p class="percentage id-result-percentage"> -->
             <!-- {{ probability }}% -->
           <!-- 98%</p>
@@ -100,9 +100,9 @@
             {% endif %}
             <a class="mushroom-link" href="{% url 'mushroom' mushroom.id %}" class="mushroom-name">{{ mushroom.name }}</a>
           </div>
-  
-        </div>  
-  
+
+        </div>
+
       </div>
       Przeglądaj -->
       <!-- <div class="id-result-container-bottom"> -->
@@ -114,15 +114,15 @@
           <img class="mySlides" src="img_forest.jpg"/>
           <button class="w3-button mushroom-button" onclick="plusDivs(1)">&#10095;</button>
         </div>
-    
+
         <script>
           var slideIndex = 1;
           showDivs(slideIndex);
         </script>
-  
+
         <a class="classic-button" href="{% url 'compare' mushroom.id %}">Porównaj</a> -->
       <!-- </div> -->
-      
+
       <!-- <div class="mushroom-content-middle">
         <div class="mushroom-images">
           <button class="w3-button mushroom-button" onclick="plusDivs(-1)">&#10094;</button>
@@ -132,13 +132,13 @@
           <img class="mySlides" src="img_forest.jpg"/>
           <button class="w3-button mushroom-button" onclick="plusDivs(1)">&#10095;</button>
         </div>
-    
+
         <script>
           var slideIndex = 1;
           showDivs(slideIndex);
         </script>
       </div>
-    
+
 
       <div class="additional-images">
         <img class="db_mushroom_photo" src="{{ mushroom.img1.url }}" />
