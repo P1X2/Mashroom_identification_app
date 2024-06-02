@@ -144,11 +144,12 @@ def profile(request):
 
 
 def recipes_categories(request):
-    context = {}
+    categories = RecipeCategory.objects.all()
+    context = {"categories": categories}
     return render(request, 'base/recipes_categories.html', context)
 
-def recipes(request):
-    category = request.GET.get('text')
+def recipes(request, pk):
+    category = RecipeCategory.objects.get(id=pk)
     recipes = Recipe.objects.filter(category=category)
     context = {"recipes": recipes}
     return render(request, 'base/recipes.html', context)
@@ -203,21 +204,38 @@ def course_test(request, pk):
     test = Test.objects.get(course=course)
     questions = Question.objects.filter(test=test)
 
+    # if request.method == 'POST':
+    #     selected_answers = request.POST.getlist('user_answers')
+
+    #     questions = Question.objects.filter(test=test)
+    #     correct_answers = []
+    #     user_score = 0
+
+    #     for question in questions:
+    #         correct_answer = Answer.objects.get(question=question, correct=True)
+    #         correct_answers.append(str(correct_answer.id))
+
+    #     for selected_answer in selected_answers:
+    #         if selected_answer in correct_answers:
+    #             user_score += 1
+
+
+    #     print(selected_answers)
+    #     print(correct_answers)
+
+
+    #     total_questions = len(questions)
+    #     percentage_score = (user_score / total_questions) * 100
+
     if request.method == 'POST':
-        selected_answers = request.POST.getlist('user_answers')
-
-        questions = Question.objects.filter(test=test)
-        correct_answers = []
-        user_score = 0
-
+        selected_answers = {}
         for question in questions:
-            correct_answer = Answer.objects.get(question=question, correct=True)
-            correct_answers.append(str(correct_answer.id))
+            selected_answer = request.POST.get(f'question_{question.id}')
+            if selected_answer:
+                selected_answers[question.id] = selected_answer
 
-        for selected_answer in selected_answers:
-            if selected_answer in correct_answers:
-                user_score += 1
-
+        correct_answers = {question.id: str(Answer.objects.get(question=question, correct=True).id) for question in questions}
+        user_score = sum(1 for question_id, selected_answer in selected_answers.items() if selected_answer == correct_answers[question_id])
 
         total_questions = len(questions)
         percentage_score = (user_score / total_questions) * 100

@@ -6,14 +6,11 @@
   </div>
   <div class="categories-content">
     <div class="categories-element">
-      <a href="{% url 'recipes' %}?text=Naszybko">Na szybko</a>
-      <a>Sosy</a>
-      <a>Suszenie</a>
-      <a>Zupy</a>
-      <a>Makarony</a>
-      <a>Smażone</a>
+      {% for category in categories %}
+      <a href="{% url 'recipes' category.id %}">{{ category.name }}</a>
+      {% endfor %}
     </div>
-</div>
+  </div>
 </div>
 
 {% endblock %}

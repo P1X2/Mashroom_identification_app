@@ -3,7 +3,6 @@
 <!-- <h1>All Questions</h1> -->
 <div class="course-test-container">
   <form method="post">
-
     {% csrf_token %} {% for question in questions %}
     <div class="course-test-content">
       <h2>{{ question.text }}</h2>
@@ -13,18 +12,19 @@
       <ul>
         {% for answer in question.answer_set.all %}
         <li>
-          <input type="radio" name="user_answers" value="{{ answer.id }}" />
+          <input
+            type="radio"
+            name="question_{{ question.id }}"
+            value="{{ answer.id }}"
+          />
           {{ answer.text }}
         </li>
         {% endfor %}
       </ul>
       {% endfor %}
       <button type="submit">Submit Answers</button>
-  
     </div>
-  
   </form>
-  
 </div>
 
 {% endblock %}
